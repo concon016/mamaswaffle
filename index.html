@@ -3,151 +3,276 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mama's Waffle | Sıcak, Çıtır, Ev Yapımı Waffle</title>
-<meta name="description" content="Mama's Waffle — taze pişen, ev yapımı hamurla hazırlanan çıtır waffle ve tatlılar. Klasik, çikolatalı, meyveli ve dondurmalı seçeneklerle şimdi sipariş ver!">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23c8863b%22/><circle cx=%2250%22 cy=%2250%22 r=%2230%22 fill=%22%23f2b705%22/></svg>">
+<title>Mama's Waffle | Kova Waffle, Tabak Waffle ve Kahve</title>
+<meta name="description" content="Mama's Waffle: taze hamurdan, sipariş üzerine pişen kova waffle, tabak waffle, tuzlu ve fit waffle seçenekleri ve kahve. Çok yakında açılıyoruz!">
+<link rel="canonical" href="https://www.mamaswaffle.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mama's Waffle">
+<meta property="og:title" content="Mama's Waffle | Kova Waffle, Tabak Waffle ve Kahve">
+<meta property="og:description" content="Mama's Waffle: taze hamurdan, sipariş üzerine pişen kova waffle, tabak waffle, tuzlu ve fit waffle seçenekleri ve kahve. Çok yakında açılıyoruz!">
+<meta property="og:url" content="https://www.mamaswaffle.com/">
+<meta property="og:image" content="https://www.mamaswaffle.com/images/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#fbf1de">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Mama's Waffle","url":"https://www.mamaswaffle.com/","servesCuisine":["Waffle","Tatlı","Kahve"],"image":"https://www.mamaswaffle.com/images/og-image.png","menu":"https://www.mamaswaffle.com/menu.html"}</script>
 </head>
 <body>
 
+<div class="announce">🧇 Çok yakında kapılarımızı açıyoruz! <a href="iletisim.html#haber">Açılıştan ilk sen haberdar ol</a></div>
+
 <header>
-  <nav>
-    <a href="index.html" class="logo">Mama's<span class="dot">Waffle</span> 🧇</a>
+  <nav class="nav">
+    <a href="index.html" class="logo" aria-label="Mama's Waffle ana sayfa"><span class="m">Mama's</span><span class="w">WAFFLE</span></a>
     <div class="nav-links" id="navLinks">
       <a href="index.html" class="active">Ana Sayfa</a>
       <a href="menu.html">Menü</a>
-      <a href="hakkimizda.html">Hakkımızda</a>
+      <a href="hakkimizda.html">Hikayemiz</a>
       <a href="iletisim.html">İletişim</a>
-      <a href="iletisim.html" class="btn" style="padding:10px 22px">Sipariş Ver</a>
+      <a href="iletisim.html#haber" class="btn">Haberdar Ol</a>
     </div>
-    <button class="burger" id="burger"><span></span><span></span><span></span></button>
+    <button class="burger" id="burger" aria-label="Menüyü aç" aria-expanded="false"><span></span><span></span><span></span></button>
   </nav>
 </header>
 
+<main>
 <section class="hero">
-  <div class="hero-grid">
+  <div class="container hero-grid">
     <div>
-      <span class="eyebrow">Her Gün Taze Pişer</span>
-      <h1>Sıcacık, <span>çıtır çıtır</span><br>ev yapımı waffle</h1>
-      <p>Mama'nın tarifinden ilham alan hamurumuzu her sabah taze karıyoruz. Klasikten çikolatalıya, meyveliden dondurmalıya — herkese göre bir waffle var.</p>
+      <span class="soon"><b>Yakında</b> Kapılarımızı açmaya hazırlanıyoruz</span>
+      <h1>Kovada, tabakta,<br><em>sıcacık</em> <span class="u">waffle.</span></h1>
+      <p class="lead">Her sabah taze karılan hamur, sipariş gelince pişen çıtır waffle. Elde yemek için kova, oturup keyif yapmak için tabak ve yanında taze bir kahve.</p>
       <div class="hero-cta">
-        <a href="menu.html" class="btn">Menüyü Gör 🧇</a>
-        <a href="iletisim.html" class="btn secondary">Bize Ulaş</a>
+        <a href="menu.html" class="btn">Menüye Göz At →</a>
+        <a href="iletisim.html#haber" class="btn ghost">Açılışı Kaçırma</a>
       </div>
     </div>
-    <div class="waffle-art">
-      <div class="waffle-plate">
-        <div></div><div></div><div></div><div></div><div></div><div></div>
-        <div></div><div></div><div></div><div></div><div></div><div></div>
-        <div></div><div></div><div></div><div></div><div></div><div></div>
-        <div></div><div></div><div></div><div></div><div></div><div></div>
-        <div></div><div></div><div></div><div></div><div></div><div></div>
-        <div></div><div></div><div></div><div></div><div></div><div></div>
-        <div class="topping drizzle"></div>
-      </div>
-      <div class="topping scoop"></div>
-      <div class="topping berry1"></div>
-      <div class="topping berry2"></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Neden Mama's Waffle</span>
-      <h2>Küçük mutfaktan, büyük lezzet</h2>
-      <p>Her waffle sipariş üzerine, anında pişirilir. Hazır karışım yok, sadece gerçek malzeme.</p>
-    </div>
-    <div class="grid-3">
-      <div class="card">
-        <div class="icon">🥚</div>
-        <h3>Günlük Taze Hamur</h3>
-        <p>Her sabah taze karılan hamurumuzla waffle'lar dışı çıtır, içi yumuşacık pişer.</p>
-      </div>
-      <div class="card">
-        <div class="icon">🍓</div>
-        <h3>Gerçek Malzemeler</h3>
-        <p>Taze meyve, gerçek çikolata ve ev yapımı soslarla — katkısız, dürüst tarifler.</p>
-      </div>
-      <div class="card">
-        <div class="icon">⚡</div>
-        <h3>Sipariş Üzerine Pişer</h3>
-        <p>Bekletilmiş, ısıtılmış yok. Siparişin geldiği an waffle demleme başlar.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="menu-strip">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow" style="background:rgba(242,183,5,.2)">Favoriler</span>
-      <h2>En çok sevilenler</h2>
-      <p>Tüm menü için menü sayfamıza göz at.</p>
-    </div>
-    <div class="menu-list">
-      <div class="menu-item">
-        <div><h4>Klasik Mama's</h4><span class="desc">Akçaağaç şurubu, tereyağı</span></div>
-        <span class="price">120₺</span>
-      </div>
-      <div class="menu-item">
-        <div><h4>Çikolata Şelalesi</h4><span class="desc">Sıcak çikolata, fındık kırığı</span></div>
-        <span class="price">145₺</span>
-      </div>
-      <div class="menu-item">
-        <div><h4>Meyve Bahçesi</h4><span class="desc">Mevsim meyveleri, krema</span></div>
-        <span class="price">150₺</span>
-      </div>
-      <div class="menu-item">
-        <div><h4>Dondurmalı Rüya</h4><span class="desc">Vanilyalı dondurma, karamel</span></div>
-        <span class="price">165₺</span>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:40px">
-      <a href="menu.html" class="btn">Tüm Menüyü Gör</a>
+    <div class="hero-art">
+      <div class="sticker">taze<br>pişer!</div>
+      <svg class="float" viewBox="0 0 400 440" role="img" aria-label="Çilek ve çikolatalı kova waffle çizimi">
+        <defs>
+          <pattern id="wg" width="18" height="18" patternUnits="userSpaceOnUse">
+            <rect width="18" height="18" fill="#f6c46a"/>
+            <rect x="4" y="4" width="10" height="10" rx="2" fill="#d98f2e"/>
+          </pattern>
+          <pattern id="stripe" width="28" height="28" patternUnits="userSpaceOnUse" patternTransform="rotate(90)">
+            <rect width="14" height="28" fill="#d9412b"/><rect x="14" width="14" height="28" fill="#fff9ec"/>
+          </pattern>
+        </defs>
+        <!-- steam -->
+        <g fill="none" stroke="#2b1810" stroke-width="3" stroke-linecap="round" opacity=".35">
+          <path d="M160 40 q-12 16 0 30 q12 14 0 30"/><path d="M210 22 q-12 16 0 30 q12 14 0 30"/><path d="M258 44 q-12 16 0 30 q12 14 0 30"/>
+        </g>
+        <!-- waffle bites -->
+        <g stroke="#2b1810" stroke-width="4">
+          <rect x="92" y="128" width="96" height="96" rx="14" fill="url(#wg)" transform="rotate(-14 140 176)"/>
+          <rect x="222" y="132" width="90" height="90" rx="14" fill="url(#wg)" transform="rotate(16 267 177)"/>
+          <rect x="152" y="100" width="100" height="100" rx="14" fill="url(#wg)" transform="rotate(6 202 150)"/>
+        </g>
+        <!-- cream -->
+        <g fill="#fff9ec" stroke="#2b1810" stroke-width="4">
+          <path d="M150 112 c-6-26 22-40 38-26 c8-22 44-20 46 6 c24-4 32 26 12 34 c-24 10-80 8-96-14z"/>
+        </g>
+        <!-- chocolate drizzle -->
+        <path d="M96 170 c30 -26 40 20 70 -6 s40 20 70 -6 s40 22 72 -4" fill="none" stroke="#4a2616" stroke-width="10" stroke-linecap="round"/>
+        <!-- strawberries -->
+        <g stroke="#2b1810" stroke-width="3.5">
+          <path d="M272 98 c-22 0-30 22-18 40 c8 12 20 18 20 18 s14-8 20-20 c10-20-2-38-22-38z" fill="#d9412b"/>
+          <path d="M262 98 l6-12 l6 10 l8-8 l-2 12" fill="#8fae5a"/>
+          <path d="M108 118 c-18 2-24 20-14 34 c6 10 18 14 18 14 s10-8 14-18 c6-18-4-32-18-30z" fill="#d9412b"/>
+          <path d="M100 118 l4-11 l6 9 l7-7 l-2 11" fill="#8fae5a"/>
+        </g>
+        <g fill="#fbe7b0"><circle cx="266" cy="118" r="2.4"/><circle cx="280" cy="126" r="2.4"/><circle cx="270" cy="136" r="2.4"/><circle cx="105" cy="136" r="2.2"/><circle cx="116" cy="146" r="2.2"/></g>
+        <!-- bucket -->
+        <path d="M86 214 L314 214 L288 404 Q285 424 264 424 L136 424 Q115 424 112 404 Z" fill="url(#stripe)" stroke="#2b1810" stroke-width="4"/>
+        <rect x="74" y="198" width="252" height="30" rx="15" fill="#d9412b" stroke="#2b1810" stroke-width="4"/>
+        <!-- label -->
+        <ellipse cx="200" cy="316" rx="76" ry="48" fill="#fff9ec" stroke="#2b1810" stroke-width="4"/>
+        <text x="200" y="312" text-anchor="middle" font-family="Caveat, cursive" font-weight="700" font-size="40" fill="#d9412b">Mama's</text>
+        <text x="200" y="340" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="18" letter-spacing="4" fill="#2b1810">WAFFLE</text>
+        <!-- fork -->
+        <g transform="rotate(24 318 150)" stroke="#2b1810" stroke-width="4" fill="#f2b340">
+          <rect x="310" y="120" width="14" height="110" rx="7"/>
+          <path d="M302 80 v36 q0 10 10 10 h10 q10 0 10-10 v-36" fill="none"/>
+        </g>
+      </svg>
     </div>
   </div>
 </section>
 
-<section>
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Kova Waffle</span><span>Tabak Waffle</span><span>Taze Kahve</span><span>Fit Waffle</span><span>Tuzlu Waffle</span><span>Dondurmalı</span>
+    <span>Kova Waffle</span><span>Tabak Waffle</span><span>Taze Kahve</span><span>Fit Waffle</span><span>Tuzlu Waffle</span><span>Dondurmalı</span>
+  </div>
+</div>
+
+<section class="block">
   <div class="container">
-    <div class="cta-band">
-      <h2>Bugün bir waffle molası hak ediyorsun</h2>
-      <p>Sipariş ver, biz taze taze pişirelim — gel al ya da yerinde ye.</p>
-      <a href="iletisim.html" class="btn secondary">Hemen Sipariş Ver</a>
+    <div class="head reveal">
+      <span class="eyebrow">İki şekilde, tek lezzet</span>
+      <h2>Nasıl seversen öyle.</h2>
+      <p>Aynı taze hamur, iki farklı keyif. Yolda yemek için kovada, oturup tadını çıkarmak için tabakta.</p>
+    </div>
+    <div class="duo">
+      <article class="duo-card reveal">
+        <div>
+          <span class="num">01 — Elde, yolda</span>
+          <h3>Kova Waffle</h3>
+          <p>Lokmalık waffle parçaları, soslar ve meyvelerle katman katman kovada. Çatalını al, yürürken ye.</p>
+          <a href="menu.html#kova">Kova menüsü</a>
+        </div>
+        <svg viewBox="0 0 150 160" aria-hidden="true">
+          <defs><pattern id="wg2" width="12" height="12" patternUnits="userSpaceOnUse"><rect width="12" height="12" fill="#f6c46a"/><rect x="3" y="3" width="6" height="6" rx="1.5" fill="#d98f2e"/></pattern></defs>
+          <g stroke="#2b1810" stroke-width="3"><rect x="30" y="34" width="48" height="48" rx="8" fill="url(#wg2)" transform="rotate(-12 54 58)"/><rect x="70" y="30" width="50" height="50" rx="8" fill="url(#wg2)" transform="rotate(12 95 55)"/></g>
+          <path d="M34 60 c18-14 22 10 40-2 s22 12 42-2" fill="none" stroke="#4a2616" stroke-width="6" stroke-linecap="round"/>
+          <path d="M22 76 H128 L114 150 Q112 156 106 156 H44 Q38 156 36 150 Z" fill="#d9412b" stroke="#2b1810" stroke-width="3"/>
+          <rect x="16" y="68" width="118" height="16" rx="8" fill="#fff9ec" stroke="#2b1810" stroke-width="3"/>
+        </svg>
+      </article>
+      <article class="duo-card dark reveal">
+        <div>
+          <span class="num">02 — Otur, keyfini çıkar</span>
+          <h3>Tabak Waffle</h3>
+          <p>Bütün, kocaman bir waffle. Üstünde dondurma, meyve ya da tuzlu seçenekler. Yanına bir kahve iyi gider.</p>
+          <a href="menu.html#tabak">Tabak menüsü</a>
+        </div>
+        <svg viewBox="0 0 150 160" aria-hidden="true">
+          <defs><pattern id="wg3" width="13" height="13" patternUnits="userSpaceOnUse"><rect width="13" height="13" fill="#f6c46a"/><rect x="3" y="3" width="7" height="7" rx="1.5" fill="#d98f2e"/></pattern></defs>
+          <ellipse cx="75" cy="120" rx="70" ry="26" fill="#fff9ec" stroke="#fbf1de" stroke-width="3"/>
+          <circle cx="75" cy="92" r="48" fill="url(#wg3)" stroke="#fbf1de" stroke-width="3"/>
+          <circle cx="68" cy="70" r="20" fill="#fff9ec" stroke="#2b1810" stroke-width="3"/>
+          <circle cx="92" cy="74" r="16" fill="#f3b6b0" stroke="#2b1810" stroke-width="3"/>
+          <path d="M44 96 c14-10 20 8 32-2 s18 10 30-2" fill="none" stroke="#6b3a20" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="106" cy="54" r="8" fill="#d9412b" stroke="#2b1810" stroke-width="3"/>
+        </svg>
+      </article>
     </div>
   </div>
 </section>
+
+<section class="block" style="padding-top:0">
+  <div class="container">
+    <div class="head center reveal">
+      <span class="eyebrow">Nasıl hazırlıyoruz</span>
+      <h2>Bekletmek yok, ısıtmak yok.</h2>
+    </div>
+    <div class="steps reveal">
+      <div class="step"><div class="n">1</div><h3>Hamur her sabah taze</h3><p>Hazır karışım kullanmıyoruz. Hamurumuzu her gün kendimiz karıyoruz.</p></div>
+      <div class="step"><div class="n">2</div><h3>Sipariş gelince pişer</h3><p>Waffle'ın dışı çıtır, içi yumuşak olsun diye her siparişi o an pişiriyoruz.</p></div>
+      <div class="step"><div class="n">3</div><h3>Seçtiğinle süslenir</h3><p>Kova mı tabak mı, tatlı mı tuzlu mu? Gerisini sana bırakıyoruz.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" style="padding-top:0">
+  <div class="container">
+    <div class="head reveal">
+      <span class="eyebrow">Merakla beklenenler</span>
+      <h2>Açılış menüsünden seçtiklerimiz</h2>
+    </div>
+    <div class="favs">
+      <a href="menu.html#kova" class="fav reveal">
+        <div class="art pist"><span class="tag">İmza</span></div>
+        <div class="fav-body"><span class="type">Kova</span><h3>Dubai Kova</h3><p>Antep fıstığı kreması, çıtır kadayıf, bitter çikolata.</p></div>
+      </a>
+      <a href="menu.html#kova" class="fav reveal">
+        <div class="art coffee"><span class="tag y">Yeni</span></div>
+        <div class="fav-body"><span class="type">Kova</span><h3>Affogato Kova</h3><p>Vanilyalı dondurma, üstüne masada dökülen sıcak espresso.</p></div>
+      </a>
+      <a href="menu.html#tabak" class="fav reveal">
+        <div class="art choc"><span class="tag">İmza</span></div>
+        <div class="fav-body"><span class="type">Tabak</span><h3>Mama's Special</h3><p>Tahin ve pekmez, ceviz, bir tutam pudra şekeri.</p></div>
+      </a>
+      <a href="menu.html#fit" class="fav reveal">
+        <div class="art fit"><span class="tag g">Fit</span></div>
+        <div class="fav-body"><span class="type">Fit</span><h3>Protein Waffle</h3><p>Yulaf ve protein hamuru, fıstık ezmesi, muz, yoğurt.</p></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="block coffee-band">
+  <div class="container grid">
+    <div class="reveal">
+      <span class="eyebrow">Waffle'ın en iyi arkadaşı</span>
+      <h2>Yanına bir <em>kahve</em><br>iyi gider.</h2>
+      <p>Espressodan latteye, Türk kahvesinden sıcak çikolataya. Waffle'ını seç, kahveyi yanına ekle, menü fiyatından yararlan.</p>
+      <a href="menu.html#kahve" class="btn butter">Kahvelere Bak</a>
+    </div>
+    <div class="combo reveal">
+      <div><span><b>Kova + Latte</b><small>Herhangi bir kova waffle ve sıcak ya da soğuk latte</small></span><span class="p">Menü</span></div>
+      <div><span><b>Tabak + Türk Kahvesi</b><small>Herhangi bir tabak waffle ve Türk kahvesi</small></span><span class="p">Menü</span></div>
+      <div><span><b>Affogato Kova</b><small>Espresso ve dondurmanın buluşması</small></span><span class="p">İmza</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <div class="fit-band reveal">
+      <div class="badge">FIT</div>
+      <div>
+        <h3>Sporcular unutulmadı.</h3>
+        <p>Yulaf ve protein tozuyla yapılan ayrı hamur, şekersiz soslar. Antrenman sonrası tatlı krizine suçluluk duymadan çözüm.</p>
+      </div>
+      <a href="menu.html#fit" class="btn ghost">Fit Köşe</a>
+    </div>
+  </div>
+</section>
+
+<section class="block" style="padding-top:0">
+  <div class="container">
+    <div class="notify reveal">
+      <div>
+        <span class="eyebrow" style="color:#fff">Çok yakında</span>
+        <h2>Açılış gününü ilk sen öğren.</h2>
+        <p>Numaranı bırak, kapılarımızı açtığımızda açılışa özel sürprizle birlikte haber verelim.</p>
+      </div>
+      <form class="js-form" data-msg="Harika! Açılışta ilk sana haber vereceğiz. 🧇">
+        <input class="field" name="ad" placeholder="Adın" required>
+        <input class="field" name="tel" type="tel" placeholder="Telefon numaran" required>
+        <button class="btn butter" type="submit" style="justify-content:center">Beni Haberdar Et</button>
+        <div class="form-msg"></div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
 
 <footer>
   <div class="container">
-    <div class="footer-grid">
+    <div class="foot">
       <div>
-        <a href="index.html" class="logo">Mama's<span class="dot" style="color:#f2b705">Waffle</span> 🧇</a>
-        <p style="margin-top:14px;max-width:280px">Ev yapımı hamur, sipariş üzerine pişen çıtır waffle'lar. Her lokmada mama'nın sıcaklığı.</p>
+        <a href="index.html" class="logo"><span class="m">Mama's</span><span class="w">WAFFLE</span></a>
+        <p style="margin-top:16px;max-width:320px">Kovada ya da tabakta; taze hamurdan, sipariş üzerine pişen waffle ve yanında güzel bir kahve.</p>
       </div>
       <div>
-        <h4>Hızlı Linkler</h4>
+        <h4>Sayfalar</h4>
         <ul>
           <li><a href="index.html">Ana Sayfa</a></li>
           <li><a href="menu.html">Menü</a></li>
-          <li><a href="hakkimizda.html">Hakkımızda</a></li>
+          <li><a href="hakkimizda.html">Hikayemiz</a></li>
           <li><a href="iletisim.html">İletişim</a></li>
         </ul>
       </div>
       <div>
-        <h4>İletişim</h4>
+        <h4>Bizi Bul</h4>
         <ul>
-          <li>📍 Adres yakında eklenecek</li>
-          <li>📞 +90 5XX XXX XX XX</li>
-          <li>✉️ merhaba@mamaswaffle.com</li>
+          <li>📍 Adres açılışla birlikte duyurulacak</li>
+          <li>🕘 Çalışma saatleri yakında</li>
+          <li><a href="iletisim.html#haber">✉️ Açılış haberini al</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">© 2026 Mama's Waffle. Tüm hakları saklıdır.</div>
+    <div class="foot-bottom">
+      <span>© 2026 Mama's Waffle. Tüm hakları saklıdır.</span>
+      <span>Web tasarım: <a href="https://canwebco.com" target="_blank" rel="noopener">canwebco</a></span>
+    </div>
   </div>
 </footer>
 

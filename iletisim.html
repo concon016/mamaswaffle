@@ -4,101 +4,124 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>İletişim | Mama's Waffle</title>
-<meta name="description" content="Mama's Waffle ile iletişime geç, sipariş ver ya da bizi ziyaret et.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23c8863b%22/><circle cx=%2250%22 cy=%2250%22 r=%2230%22 fill=%22%23f2b705%22/></svg>">
+<meta name="description" content="Mama's Waffle ile iletişime geç, açılış haberini ilk sen al.">
+<link rel="canonical" href="https://www.mamaswaffle.com/iletisim.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mama's Waffle">
+<meta property="og:title" content="İletişim | Mama's Waffle">
+<meta property="og:description" content="Mama's Waffle ile iletişime geç, açılış haberini ilk sen al.">
+<meta property="og:url" content="https://www.mamaswaffle.com/iletisim.html">
+<meta property="og:image" content="https://www.mamaswaffle.com/images/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#fbf1de">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
+<div class="announce">🧇 Çok yakında kapılarımızı açıyoruz! <a href="iletisim.html#haber">Açılıştan ilk sen haberdar ol</a></div>
+
 <header>
-  <nav>
-    <a href="index.html" class="logo">Mama's<span class="dot">Waffle</span> 🧇</a>
+  <nav class="nav">
+    <a href="index.html" class="logo" aria-label="Mama's Waffle ana sayfa"><span class="m">Mama's</span><span class="w">WAFFLE</span></a>
     <div class="nav-links" id="navLinks">
       <a href="index.html">Ana Sayfa</a>
       <a href="menu.html">Menü</a>
-      <a href="hakkimizda.html">Hakkımızda</a>
+      <a href="hakkimizda.html">Hikayemiz</a>
       <a href="iletisim.html" class="active">İletişim</a>
-      <a href="iletisim.html" class="btn" style="padding:10px 22px">Sipariş Ver</a>
+      <a href="iletisim.html#haber" class="btn">Haberdar Ol</a>
     </div>
-    <button class="burger" id="burger"><span></span><span></span><span></span></button>
+    <button class="burger" id="burger" aria-label="Menüyü aç" aria-expanded="false"><span></span><span></span><span></span></button>
   </nav>
 </header>
 
-<div class="page-hero">
-  <span class="eyebrow">İletişim</span>
-  <h1>Bize ulaş, sipariş ver</h1>
-  <p>Sorularınız veya siparişleriniz için aşağıdaki formu doldurun ya da doğrudan WhatsApp'tan yazın.</p>
-</div>
-
-<section style="padding-top:0">
+<main>
+<section class="page-hero">
   <div class="container">
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div class="item">
-          <div class="icon">📍</div>
-          <div><h4>Adres</h4><p style="color:var(--muted)">Adres bilgisi yakında eklenecek</p></div>
-        </div>
-        <div class="item">
-          <div class="icon">📞</div>
-          <div><h4>Telefon</h4><p style="color:var(--muted)">+90 5XX XXX XX XX</p></div>
-        </div>
-        <div class="item">
-          <div class="icon">✉️</div>
-          <div><h4>E-posta</h4><p style="color:var(--muted)">merhaba@mamaswaffle.com</p></div>
-        </div>
-        <div class="item">
-          <div class="icon">🕒</div>
-          <div><h4>Çalışma Saatleri</h4><p style="color:var(--muted)">Her gün 09:00 – 22:00</p></div>
-        </div>
-        <a href="https://wa.me/905XXXXXXXXX" target="_blank" class="btn" style="margin-top:10px">WhatsApp'tan Yaz 💬</a>
-        <div class="map-box">Harita yakında eklenecek</div>
+    <span class="eyebrow">İletişim</span>
+    <h1>Bir waffle <em>uzağındayız.</em></h1>
+    <p>Adresimizi ve çalışma saatlerimizi açılışla birlikte burada paylaşacağız. O zamana kadar bize buradan yazabilirsin.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container contact-grid">
+    <div class="info-list">
+      <div class="info reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2b1810" stroke-width="2"><path d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <div><h3>Adres</h3><p>Dükkanımız hazırlanıyor. Adresimizi açılışla birlikte burada duyuracağız.</p></div>
       </div>
+      <div class="info reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2b1810" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <div><h3>Çalışma saatleri</h3><p>Açılışla birlikte duyurulacak.</p></div>
+      </div>
+      <div class="info reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2b1810" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 8l9 6 9-6"/></svg></div>
+        <div><h3>Sipariş ve paket servis</h3><p>WhatsApp sipariş hattımız ve paket servis seçenekleri açılışla birlikte aktif olacak.</p></div>
+      </div>
+    </div>
 
-      <form id="contactForm">
-        <label for="name">Ad Soyad</label>
-        <input type="text" id="name" required placeholder="Adınız Soyadınız">
+    <div style="display:grid;gap:28px">
+      <form class="card-form js-form reveal" id="haber" data-msg="Harika! Açılışta ilk sana haber vereceğiz. 🧇" style="scroll-margin-top:100px">
+        <span class="eyebrow">Açılış listesi</span>
+        <h2>Açılıştan ilk sen haberdar ol</h2>
+        <div class="row2">
+          <label>Adın<input class="field" name="ad" required></label>
+          <label>Telefon<input class="field" name="tel" type="tel" required></label>
+        </div>
+        <button class="btn" type="submit" style="justify-content:center">Listeye Katıl</button>
+        <div class="form-msg"></div>
+      </form>
 
-        <label for="phone">Telefon</label>
-        <input type="tel" id="phone" required placeholder="05XX XXX XX XX">
-
-        <label for="order">Sipariş / Mesaj</label>
-        <textarea id="order" required placeholder="Hangi waffle'ı denemek istersin?"></textarea>
-
-        <button type="submit" class="btn">Gönder</button>
-        <div class="form-msg" id="formMsg">Teşekkürler! Mesajın alındı, en kısa sürede dönüş yapacağız. 🧇</div>
+      <form class="card-form js-form reveal" data-msg="Mesajın alındı, teşekkürler! En kısa sürede dönüş yapacağız.">
+        <span class="eyebrow">Mesaj</span>
+        <h2>Bize yaz</h2>
+        <div class="row2">
+          <label>Adın<input class="field" name="ad" required></label>
+          <label>E-posta ya da telefon<input class="field" name="iletisim" required></label>
+        </div>
+        <label>Mesajın<textarea class="field" name="mesaj" placeholder="Toplu sipariş, iş birliği, öneri…" required></textarea></label>
+        <button class="btn ghost" type="submit" style="justify-content:center">Gönder</button>
+        <div class="form-msg"></div>
       </form>
     </div>
   </div>
 </section>
+</main>
 
 <footer>
   <div class="container">
-    <div class="footer-grid">
+    <div class="foot">
       <div>
-        <a href="index.html" class="logo">Mama's<span class="dot" style="color:#f2b705">Waffle</span> 🧇</a>
-        <p style="margin-top:14px;max-width:280px">Ev yapımı hamur, sipariş üzerine pişen çıtır waffle'lar. Her lokmada mama'nın sıcaklığı.</p>
+        <a href="index.html" class="logo"><span class="m">Mama's</span><span class="w">WAFFLE</span></a>
+        <p style="margin-top:16px;max-width:320px">Kovada ya da tabakta; taze hamurdan, sipariş üzerine pişen waffle ve yanında güzel bir kahve.</p>
       </div>
       <div>
-        <h4>Hızlı Linkler</h4>
+        <h4>Sayfalar</h4>
         <ul>
           <li><a href="index.html">Ana Sayfa</a></li>
           <li><a href="menu.html">Menü</a></li>
-          <li><a href="hakkimizda.html">Hakkımızda</a></li>
+          <li><a href="hakkimizda.html">Hikayemiz</a></li>
           <li><a href="iletisim.html">İletişim</a></li>
         </ul>
       </div>
       <div>
-        <h4>İletişim</h4>
+        <h4>Bizi Bul</h4>
         <ul>
-          <li>📍 Adres yakında eklenecek</li>
-          <li>📞 +90 5XX XXX XX XX</li>
-          <li>✉️ merhaba@mamaswaffle.com</li>
+          <li>📍 Adres açılışla birlikte duyurulacak</li>
+          <li>🕘 Çalışma saatleri yakında</li>
+          <li><a href="iletisim.html#haber">✉️ Açılış haberini al</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">© 2026 Mama's Waffle. Tüm hakları saklıdır.</div>
+    <div class="foot-bottom">
+      <span>© 2026 Mama's Waffle. Tüm hakları saklıdır.</span>
+      <span>Web tasarım: <a href="https://canwebco.com" target="_blank" rel="noopener">canwebco</a></span>
+    </div>
   </div>
 </footer>
 

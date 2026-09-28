@@ -3,116 +3,135 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hakkımızda | Mama's Waffle</title>
-<meta name="description" content="Mama's Waffle'ın hikayesi: ev mutfağından başlayan, taze malzeme ve içtenlikle büyüyen bir waffle sevgisi.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23c8863b%22/><circle cx=%2250%22 cy=%2250%22 r=%2230%22 fill=%22%23f2b705%22/></svg>">
+<title>Hikayemiz | Mama's Waffle</title>
+<meta name="description" content="Mama's Waffle'ın hikayesi: taze hamur, sipariş üzerine pişen waffle ve gerçek malzeme.">
+<link rel="canonical" href="https://www.mamaswaffle.com/hakkimizda.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mama's Waffle">
+<meta property="og:title" content="Hikayemiz | Mama's Waffle">
+<meta property="og:description" content="Mama's Waffle'ın hikayesi: taze hamur, sipariş üzerine pişen waffle ve gerçek malzeme.">
+<meta property="og:url" content="https://www.mamaswaffle.com/hakkimizda.html">
+<meta property="og:image" content="https://www.mamaswaffle.com/images/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#fbf1de">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
+<div class="announce">🧇 Çok yakında kapılarımızı açıyoruz! <a href="iletisim.html#haber">Açılıştan ilk sen haberdar ol</a></div>
+
 <header>
-  <nav>
-    <a href="index.html" class="logo">Mama's<span class="dot">Waffle</span> 🧇</a>
+  <nav class="nav">
+    <a href="index.html" class="logo" aria-label="Mama's Waffle ana sayfa"><span class="m">Mama's</span><span class="w">WAFFLE</span></a>
     <div class="nav-links" id="navLinks">
       <a href="index.html">Ana Sayfa</a>
       <a href="menu.html">Menü</a>
-      <a href="hakkimizda.html" class="active">Hakkımızda</a>
+      <a href="hakkimizda.html" class="active">Hikayemiz</a>
       <a href="iletisim.html">İletişim</a>
-      <a href="iletisim.html" class="btn" style="padding:10px 22px">Sipariş Ver</a>
+      <a href="iletisim.html#haber" class="btn">Haberdar Ol</a>
     </div>
-    <button class="burger" id="burger"><span></span><span></span><span></span></button>
+    <button class="burger" id="burger" aria-label="Menüyü aç" aria-expanded="false"><span></span><span></span><span></span></button>
   </nav>
 </header>
 
-<div class="page-hero">
-  <span class="eyebrow">Hikayemiz</span>
-  <h1>Ev mutfağından, sizin sofranıza</h1>
-  <p>Mama's Waffle, sade bir sevgiyle başladı: sıcak, çıtır bir waffle'ın herkesi gülümsetebileceğine inanıyoruz.</p>
-</div>
-
-<section style="padding-top:0">
+<main>
+<section class="page-hero">
   <div class="container">
-    <div class="about-grid">
-      <div class="about-art"></div>
+    <span class="eyebrow">Hikayemiz</span>
+    <h1>Adını <em>annelerden</em> alan bir waffle.</h1>
+    <p>Mama's Waffle, çocukken mutfaktan gelen o sıcak kokunun peşinde açılıyor.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container split">
+    <div class="reveal">
+      <span class="eyebrow">Neden "Mama's"?</span>
+      <h2 style="font-size:clamp(2rem,4vw,3rem)">Çünkü en güzel tatlılar evde yapılır.</h2>
+      <p>Hepimizin hatırladığı o tatlı vardır: hafta sonu sabahı, sıcak tavadan tabağa gelen, kimsenin beklemeye sabrının olmadığı. Mama's Waffle o hissi sokağa taşımak için kuruldu.</p>
+      <p>Hazır karışım kullanmıyor, hamurumuzu her gün kendimiz karıyoruz. Waffle'ı bekletmiyor, siparişi aldığımız anda pişiriyoruz. Malzemeyi de kendi evimize alır gibi seçiyoruz.</p>
+    </div>
+    <blockquote class="quote reveal">
+      Sıcakken yiyin, soğumasın!
+      <small>Her annenin mutfaktan seslendiği o cümle, bizim de mottomuz.</small>
+    </blockquote>
+  </div>
+</section>
+
+<section class="block" style="padding-top:0">
+  <div class="container">
+    <div class="head center reveal">
+      <span class="eyebrow">Söz veriyoruz</span>
+      <h2>Bizi biz yapan üç şey</h2>
+    </div>
+    <div class="values">
+      <div class="value reveal">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2b1810" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg></div>
+        <h3>Taze hamur</h3>
+        <p>Hamurumuzu her sabah karıyoruz. Dışı çıtır, içi yumuşak waffle'ın sırrı bu.</p>
+      </div>
+      <div class="value reveal">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2b1810" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg></div>
+        <h3>Sipariş üzerine</h3>
+        <p>Önceden pişirip bekletmiyoruz. Her waffle, siparişin geldiği anda pişer.</p>
+      </div>
+      <div class="value reveal">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2b1810" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6C19 16.5 12 21 12 21z"/></svg></div>
+        <h3>Gerçek malzeme</h3>
+        <p>Gerçek çikolata, taze meyve, ev yapımı soslar. Kendi sofrana ne koyarsan onu koyuyoruz.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" style="padding-top:0">
+  <div class="container">
+    <div class="notify reveal">
       <div>
-        <span class="eyebrow">Nasıl Başladı</span>
-        <h2>Küçük bir tarif, büyük bir tutku</h2>
-        <p style="color:var(--muted);margin-top:16px">Her şey mama'nın mutfağında, hafta sonu kahvaltılarında pişen waffle'larla başladı. O tarif zamanla arkadaşlara, komşulara ve sonunda kendi köşemize taşındı. Bugün hâlâ aynı içtenlikle, aynı taze malzemelerle pişiriyoruz.</p>
-        <p style="color:var(--muted);margin-top:14px">Amacımız basit: hazır karışım kullanmadan, sipariş üzerine, gerçek malzemelerle dürüst bir waffle sunmak.</p>
-        <div class="stats">
-          <div class="stat"><div class="num">15+</div><div class="label">Waffle çeşidi</div></div>
-          <div class="stat"><div class="num">100%</div><div class="label">Taze hamur</div></div>
-          <div class="stat"><div class="num">7/7</div><div class="label">Sipariş üzerine pişer</div></div>
-        </div>
+        <span class="eyebrow" style="color:#fff">Yakında</span>
+        <h2>Hikayenin ilk sayfasında sen de ol.</h2>
+        <p>Açılış tarihimizi ve açılışa özel sürprizi ilk sen öğren.</p>
       </div>
+      <div><a href="iletisim.html#haber" class="btn butter">Açılıştan Haberdar Ol →</a></div>
     </div>
   </div>
 </section>
-
-<section>
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Değerlerimiz</span>
-      <h2>Bizi biz yapan şeyler</h2>
-    </div>
-    <div class="grid-3">
-      <div class="card">
-        <div class="icon">🌾</div>
-        <h3>Gerçek Malzeme</h3>
-        <p>Katkısız hamur, taze meyve ve gerçek çikolata dışında hiçbir şey kullanmıyoruz.</p>
-      </div>
-      <div class="card">
-        <div class="icon">❤️</div>
-        <h3>İçten Servis</h3>
-        <p>Her siparişi sanki mama kendi mutfağında pişiriyormuş gibi özenle hazırlıyoruz.</p>
-      </div>
-      <div class="card">
-        <div class="icon">♻️</div>
-        <h3>Sıfır Atık Odaklı</h3>
-        <p>Sipariş üzerine pişirerek israfı azaltıyor, her waffle'ı tam kıvamında sunuyoruz.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section style="padding-top:0">
-  <div class="container">
-    <div class="cta-band">
-      <h2>Bir tadımlık uzaktasın</h2>
-      <p>Bize uğra ya da sipariş ver, hikayenin bir parçası ol.</p>
-      <a href="iletisim.html" class="btn secondary">Bize Ulaş</a>
-    </div>
-  </div>
-</section>
+</main>
 
 <footer>
   <div class="container">
-    <div class="footer-grid">
+    <div class="foot">
       <div>
-        <a href="index.html" class="logo">Mama's<span class="dot" style="color:#f2b705">Waffle</span> 🧇</a>
-        <p style="margin-top:14px;max-width:280px">Ev yapımı hamur, sipariş üzerine pişen çıtır waffle'lar. Her lokmada mama'nın sıcaklığı.</p>
+        <a href="index.html" class="logo"><span class="m">Mama's</span><span class="w">WAFFLE</span></a>
+        <p style="margin-top:16px;max-width:320px">Kovada ya da tabakta; taze hamurdan, sipariş üzerine pişen waffle ve yanında güzel bir kahve.</p>
       </div>
       <div>
-        <h4>Hızlı Linkler</h4>
+        <h4>Sayfalar</h4>
         <ul>
           <li><a href="index.html">Ana Sayfa</a></li>
           <li><a href="menu.html">Menü</a></li>
-          <li><a href="hakkimizda.html">Hakkımızda</a></li>
+          <li><a href="hakkimizda.html">Hikayemiz</a></li>
           <li><a href="iletisim.html">İletişim</a></li>
         </ul>
       </div>
       <div>
-        <h4>İletişim</h4>
+        <h4>Bizi Bul</h4>
         <ul>
-          <li>📍 Adres yakında eklenecek</li>
-          <li>📞 +90 5XX XXX XX XX</li>
-          <li>✉️ merhaba@mamaswaffle.com</li>
+          <li>📍 Adres açılışla birlikte duyurulacak</li>
+          <li>🕘 Çalışma saatleri yakında</li>
+          <li><a href="iletisim.html#haber">✉️ Açılış haberini al</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">© 2026 Mama's Waffle. Tüm hakları saklıdır.</div>
+    <div class="foot-bottom">
+      <span>© 2026 Mama's Waffle. Tüm hakları saklıdır.</span>
+      <span>Web tasarım: <a href="https://canwebco.com" target="_blank" rel="noopener">canwebco</a></span>
+    </div>
   </div>
 </footer>
 
