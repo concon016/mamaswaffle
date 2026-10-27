@@ -231,7 +231,7 @@ textarea.field{min-height:130px;resize:vertical}
 
 /* Footer */
 footer{background:var(--plum-2);color:#e9cdd5;padding:70px 0 30px;margin-top:20px;border-top:6px solid var(--rose)}
-.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+.foot{display:grid;grid-template-columns:2fr 1fr;gap:40px}
 footer .logo span{color:var(--paper)}
 footer .logo img{width:72px;height:72px}
 footer h4{color:var(--paper);font-size:1.1rem;margin-bottom:16px;letter-spacing:.04em}
