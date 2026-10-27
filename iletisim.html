@@ -13,13 +13,13 @@
 <meta property="og:url" content="https://www.mamaswaffle.com/iletisim.html">
 <meta property="og:image" content="https://www.mamaswaffle.com/images/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#fbf1de">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#76203b">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Kalam:wght@700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
 
@@ -27,7 +27,7 @@
 
 <header>
   <nav class="nav">
-    <a href="index.html" class="logo" aria-label="Mama's Waffle ana sayfa"><span class="m">Mama's</span><span class="w">WAFFLE</span></a>
+    <a href="index.html" class="logo" aria-label="Mama's Waffle ana sayfa"><img src="images/logo-320.webp" alt="Mama's Waffle logosu" width="56" height="56"><span>Mama's Waffle</span></a>
     <div class="nav-links" id="navLinks">
       <a href="index.html">Ana Sayfa</a>
       <a href="menu.html">Menü</a>
@@ -42,6 +42,7 @@
 <main>
 <section class="page-hero">
   <div class="container">
+    <img class="mini" src="images/logo-320.webp" alt="" width="86" height="86">
     <span class="eyebrow">İletişim</span>
     <h1>Bir waffle <em>uzağındayız.</em></h1>
     <p>Adresimizi ve çalışma saatlerimizi açılışla birlikte burada paylaşacağız. O zamana kadar bize buradan yazabilirsin.</p>
@@ -52,40 +53,40 @@
   <div class="container contact-grid">
     <div class="info-list">
       <div class="info reveal">
-        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2b1810" stroke-width="2"><path d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#76203b" stroke-width="2"><path d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
         <div><h3>Adres</h3><p>Dükkanımız hazırlanıyor. Adresimizi açılışla birlikte burada duyuracağız.</p></div>
       </div>
       <div class="info reveal">
-        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2b1810" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#76203b" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
         <div><h3>Çalışma saatleri</h3><p>Açılışla birlikte duyurulacak.</p></div>
       </div>
       <div class="info reveal">
-        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2b1810" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 8l9 6 9-6"/></svg></div>
-        <div><h3>Sipariş ve paket servis</h3><p>WhatsApp sipariş hattımız ve paket servis seçenekleri açılışla birlikte aktif olacak.</p></div>
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#76203b" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 8l9 6 9-6"/></svg></div>
+        <div><h3>Masadan QR ile sipariş</h3><p>Masalardaki QR kodu okut, menüden seç ve siparişini doğrudan ver. Açılışla birlikte aktif olacak.</p></div>
       </div>
     </div>
 
     <div style="display:grid;gap:28px">
-      <form class="card-form js-form reveal" id="haber" data-msg="Harika! Açılışta ilk sana haber vereceğiz. 🧇" style="scroll-margin-top:100px">
-        <span class="eyebrow">Açılış listesi</span>
+      <form class="card-form js-form reveal" id="haber" data-msg="Harika! Açılışta ilk sana haber vereceğiz. 🧇" style="scroll-margin-top:110px">
+        <span class="eyebrow"><i class="flower"></i>Açılış listesi</span>
         <h2>Açılıştan ilk sen haberdar ol</h2>
         <div class="row2">
           <label>Adın<input class="field" name="ad" required></label>
           <label>Telefon<input class="field" name="tel" type="tel" required></label>
         </div>
-        <button class="btn" type="submit" style="justify-content:center">Listeye Katıl</button>
+        <button class="btn" type="submit">Listeye Katıl</button>
         <div class="form-msg"></div>
       </form>
 
       <form class="card-form js-form reveal" data-msg="Mesajın alındı, teşekkürler! En kısa sürede dönüş yapacağız.">
-        <span class="eyebrow">Mesaj</span>
+        <span class="eyebrow"><i class="flower"></i>Mesaj</span>
         <h2>Bize yaz</h2>
         <div class="row2">
           <label>Adın<input class="field" name="ad" required></label>
           <label>E-posta ya da telefon<input class="field" name="iletisim" required></label>
         </div>
         <label>Mesajın<textarea class="field" name="mesaj" placeholder="Toplu sipariş, iş birliği, öneri…" required></textarea></label>
-        <button class="btn ghost" type="submit" style="justify-content:center">Gönder</button>
+        <button class="btn ghost" type="submit">Gönder</button>
         <div class="form-msg"></div>
       </form>
     </div>
@@ -97,7 +98,7 @@
   <div class="container">
     <div class="foot">
       <div>
-        <a href="index.html" class="logo"><span class="m">Mama's</span><span class="w">WAFFLE</span></a>
+        <a href="index.html" class="logo"><img src="images/logo-320.webp" alt="" width="72" height="72" loading="lazy"><span>Mama's Waffle</span></a>
         <p style="margin-top:16px;max-width:320px">Kovada ya da tabakta; taze hamurdan, sipariş üzerine pişen waffle ve yanında güzel bir kahve.</p>
       </div>
       <div>
