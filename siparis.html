@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Sipariş Ver | Mama's Waffle</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#76203b">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--rose:#c96a80;--rose-2:#b4566d;--rose-soft:#f0c9d2;--blush:#f8e3e6;--plum:#76203b;--plum-2:#5a1730;--cream:#f6ecdc;--paper:#fdf7ee;--muted:#8a6470;--line:rgba(118,32,59,.14)}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Nunito',system-ui,sans-serif;background:var(--cream);color:var(--plum);padding-bottom:110px;min-height:100vh}
+h1,h2,h3{font-family:'Alfa Slab One',Georgia,serif;font-weight:400}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:640px;margin:0 auto}
+
+/* Üst */
+.top{background:var(--plum);color:var(--paper);padding:16px 16px 22px;border-bottom:5px solid var(--rose)}
+.top .row{display:flex;align-items:center;gap:12px}
+.top img{width:54px;height:54px;border-radius:50%}
+.top h1{font-size:1.35rem;line-height:1.1}
+.top small{display:block;color:var(--rose-soft);font-weight:700;font-size:.85rem;margin-top:3px}
+.masa{margin-left:auto;background:var(--paper);color:var(--plum);border-radius:16px;padding:6px 12px;text-align:center;line-height:1.05;flex-shrink:0}
+.masa b{display:block;font-family:'Alfa Slab One',serif;font-weight:400;font-size:1.5rem}
+.masa span{font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.taslak{background:#fff3c9;color:#6b4a00;font-size:.82rem;font-weight:700;text-align:center;padding:7px 12px}
+
+/* Kategori çipleri */
+.chips{position:sticky;top:0;z-index:20;background:var(--cream);border-bottom:2px solid var(--line)}
+.chips .wrap{display:flex;gap:8px;overflow-x:auto;padding:12px 16px;scrollbar-width:none}
+.chips .wrap::-webkit-scrollbar{display:none}
+.chip{white-space:nowrap;padding:8px 14px;border-radius:999px;border:2px solid var(--plum);background:var(--paper);font-weight:800;font-size:.9rem}
+.chip.on{background:var(--plum);color:var(--paper)}
+
+/* Ürünler */
+.kat{padding:22px 16px 4px;scroll-margin-top:66px}
+.kat h2{font-size:1.4rem;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.urun{display:flex;gap:12px;align-items:center;background:var(--paper);border:2px solid var(--plum);border-radius:18px;padding:12px;margin-bottom:10px;width:100%;text-align:left}
+.urun .ik{width:56px;height:56px;border-radius:14px;background:var(--blush);display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0}
+.urun .bilgi{flex:1;min-width:0}
+.urun h3{font-family:'Nunito',sans-serif;font-weight:800;font-size:1.02rem;line-height:1.25}
+.urun p{color:var(--muted);font-size:.86rem;line-height:1.35;margin-top:2px}
+.urun .fiyat{font-family:'Alfa Slab One',serif;color:var(--rose-2);margin-top:4px}
+.urun .ekle{width:40px;height:40px;border-radius:50%;background:var(--plum);color:var(--paper);font-size:1.5rem;line-height:1;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative}
+.urun .ekle i{position:absolute;top:-6px;right:-6px;background:var(--rose);color:#fff;font-style:normal;font-size:.72rem;font-weight:800;min-width:20px;height:20px;border-radius:10px;display:flex;align-items:center;justify-content:center;border:2px solid var(--paper)}
+.etiket{display:inline-block;font-size:.62rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:999px;background:var(--rose);color:#fff;vertical-align:2px;margin-left:4px}
+.etiket.Fit{background:#6d8a3a}.etiket.Yeni{background:#e3a35f;color:var(--plum)}
+
+/* Sepet çubuğu */
+.bar{position:fixed;left:0;right:0;bottom:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom));z-index:30;pointer-events:none}
+.bar button{pointer-events:auto;max-width:608px;margin:0 auto;width:100%;display:flex;align-items:center;gap:12px;background:var(--plum);color:var(--paper);border-radius:20px;padding:15px 18px;font-weight:800;font-size:1.05rem;box-shadow:0 6px 0 var(--plum-2),0 14px 30px rgba(90,23,48,.35);transition:transform .2s}
+.bar button .adet{background:var(--rose);border-radius:10px;padding:2px 10px}
+.bar button .tutar{margin-left:auto;font-family:'Alfa Slab One',serif;font-weight:400}
+.bar.gizli button{transform:translateY(140%)}
+
+/* Alt panel */
+.perde{position:fixed;inset:0;background:rgba(58,14,30,.5);z-index:40;opacity:0;pointer-events:none;transition:opacity .2s}
+.perde.acik{opacity:1;pointer-events:auto}
+.panel{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--paper);border-radius:26px 26px 0 0;max-height:88vh;overflow-y:auto;transform:translateY(105%);transition:transform .28s cubic-bezier(.2,.8,.2,1);padding:0 18px calc(18px + env(safe-area-inset-bottom));max-width:640px;margin:0 auto}
+.panel.acik{transform:none}
+.panel .tut{width:44px;height:5px;border-radius:3px;background:var(--rose-soft);margin:10px auto 6px}
+.panel .kapat{position:absolute;top:12px;right:14px;width:36px;height:36px;border-radius:50%;background:var(--blush);font-size:1.2rem;font-weight:800}
+.panel h2{font-size:1.45rem;padding-right:40px;margin-top:8px}
+.panel .acik-not{color:var(--muted);margin:4px 0 6px}
+.grup{margin-top:16px}
+.grup h4{font-weight:800;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--rose-2);margin-bottom:8px}
+.sec{display:flex;align-items:center;gap:10px;padding:12px 14px;border:2px solid var(--line);border-radius:14px;margin-bottom:8px;font-weight:700}
+.sec input{accent-color:var(--plum);width:20px;height:20px}
+.sec span{margin-left:auto;color:var(--muted);font-weight:700;font-size:.92rem}
+.sec:has(input:checked){border-color:var(--plum);background:var(--blush)}
+.adetkutu{display:flex;align-items:center;gap:14px}
+.adetkutu button{width:42px;height:42px;border-radius:50%;border:2px solid var(--plum);font-size:1.3rem;font-weight:800}
+.adetkutu b{font-family:'Alfa Slab One',serif;font-weight:400;font-size:1.3rem;min-width:24px;text-align:center}
+.ana-btn{display:flex;align-items:center;justify-content:space-between;width:100%;background:var(--plum);color:var(--paper);border-radius:18px;padding:15px 18px;font-weight:800;font-size:1.05rem;margin-top:16px;box-shadow:0 5px 0 var(--plum-2)}
+.ana-btn:disabled{opacity:.5}
+.alt{display:flex;gap:12px;align-items:center;margin-top:18px}
+.alt .ana-btn{margin-top:0;flex:1}
+textarea{width:100%;border:2px solid var(--line);border-radius:14px;padding:12px;font:inherit;background:#fff;min-height:70px;resize:vertical;color:var(--plum)}
+textarea:focus{outline:none;border-color:var(--plum)}
+
+/* Sepet satırları */
+.satir{display:flex;gap:10px;align-items:flex-start;padding:12px 0;border-bottom:2px dotted var(--rose-soft)}
+.satir .ad{flex:1;font-weight:800}
+.satir .ad small{display:block;color:var(--muted);font-weight:600;font-size:.85rem}
+.satir .f{font-family:'Alfa Slab One',serif;color:var(--rose-2);white-space:nowrap}
+.mini{display:flex;align-items:center;gap:8px;margin-top:6px}
+.mini button{width:30px;height:30px;border-radius:50%;border:2px solid var(--plum);font-weight:800}
+.toplam{display:flex;justify-content:space-between;align-items:center;padding:14px 0 4px;font-weight:800;font-size:1.1rem}
+.toplam b{font-family:'Alfa Slab One',serif;font-weight:400;font-size:1.4rem}
+.odeme{color:var(--muted);font-size:.88rem;margin-top:6px}
+
+/* Onay */
+.onay{text-align:center;padding:26px 6px 10px}
+.onay .tik{width:84px;height:84px;border-radius:50%;background:var(--rose);color:#fff;font-size:2.6rem;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;border:3px solid var(--plum)}
+.onay h2{padding:0}
+.onay .no{display:inline-block;margin-top:12px;background:var(--blush);border:2px dashed var(--rose);border-radius:14px;padding:8px 18px;font-weight:800}
+.onay p{color:var(--muted);margin-top:12px}
+.bos{text-align:center;color:var(--muted);padding:30px 0}
+</style>
+</head>
+<body>
+
+<div class="taslak">Taslak sürüm: siparişler henüz mutfağa iletilmiyor.</div>
+
+<header class="top">
+  <div class="wrap row">
+    <img src="images/logo-320.webp" alt="Mama's Waffle" width="54" height="54">
+    <div><h1>Mama's Waffle</h1><small>Seç, ekle, sipariş ver 🧇</small></div>
+    <div class="masa" id="masaKutu"><span>Masa</span><b id="masaNo">–</b></div>
+  </div>
+</header>
+
+<nav class="chips" aria-label="Kategoriler"><div class="wrap" id="chips"></div></nav>
+<main class="wrap" id="liste"></main>
+
+<div class="bar gizli" id="bar"><button id="sepetBtn"><span class="adet" id="barAdet">0</span>Sepeti Gör<span class="tutar" id="barTutar">0₺</span></button></div>
+
+<div class="perde" id="perde"></div>
+<section class="panel" id="panel" role="dialog" aria-modal="true"><div class="tut"></div><button class="kapat" id="kapat" aria-label="Kapat">✕</button><div id="panelIc"></div></section>
+
+<script src="siparis-menu.js"></script>
+<script>
+const masa = (new URLSearchParams(location.search).get('masa') || '').replace(/\D/g, '').slice(0, 3);
+document.getElementById('masaNo').textContent = masa || '?';
+if (!masa) document.getElementById('masaKutu').style.display = 'none';
+
+const TL = n => n.toLocaleString('tr-TR') + '₺';
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+let sepet = [];
+try { sepet = JSON.parse(sessionStorage.getItem('mw_sepet') || '[]'); } catch (e) {}
+const kaydet = () => { try { sessionStorage.setItem('mw_sepet', JSON.stringify(sepet)); } catch (e) {} };
+
+// Ürün listesi
+const chips = document.getElementById('chips'), liste = document.getElementById('liste');
+MENU.forEach((k, ki) => {
+  chips.insertAdjacentHTML('beforeend', `<a class="chip${ki ? '' : ' on'}" href="#k-${k.id}">${k.ikon} ${k.kisa}</a>`);
+  liste.insertAdjacentHTML('beforeend', `<section class="kat" id="k-${k.id}"><h2>${k.ikon} ${esc(k.ad)}</h2>` +
+    k.urunler.map((u, ui) => `<button class="urun" data-k="${ki}" data-u="${ui}">
+      <div class="ik">${k.ikon}</div>
+      <div class="bilgi"><h3>${esc(u.ad)}${u.etiket ? ` <span class="etiket ${u.etiket}">${u.etiket}</span>` : ''}</h3>
+      ${u.aciklama ? `<p>${esc(u.aciklama)}</p>` : ''}<div class="fiyat">${TL(u.fiyat)}</div></div>
+      <span class="ekle" aria-hidden="true">+</span></button>`).join('') + '</section>');
+});
+
+// Görünen kategoriyi çipte vurgula
+const chipEls = [...chips.children];
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) chipEls.forEach(c => {
+    const on = c.getAttribute('href') === '#' + e.target.id;
+    c.classList.toggle('on', on);
+    if (on) chips.scrollTo({ left: c.offsetLeft - chips.clientWidth / 2 + c.offsetWidth / 2, behavior: 'smooth' });
+  });
+}), { rootMargin: '-30% 0px -65% 0px' });
+document.querySelectorAll('.kat').forEach(s => io.observe(s));
+
+function seceneklerOf(k, u) {
+  if (SECENEKSIZ.includes(u.ad)) return [];
+  return (KATEGORI_SECENEK[k.id] || []).filter(s => !(s === 'sut' && SUTSUZ.includes(u.ad)));
+}
+
+// Panel
+const panel = document.getElementById('panel'), perde = document.getElementById('perde'), ic = document.getElementById('panelIc');
+const ac = html => { ic.innerHTML = html; panel.classList.add('acik'); perde.classList.add('acik'); panel.scrollTop = 0; };
+const kapat = () => { panel.classList.remove('acik'); perde.classList.remove('acik'); };
+perde.onclick = kapat; document.getElementById('kapat').onclick = kapat;
+
+liste.addEventListener('click', e => {
+  const b = e.target.closest('.urun'); if (!b) return;
+  const k = MENU[b.dataset.k], u = k.urunler[b.dataset.u], secs = seceneklerOf(k, u);
+  let adet = 1;
+  ac(`<h2>${esc(u.ad)}</h2><p class="acik-not">${esc(u.aciklama)}</p>` +
+    secs.map(sk => { const s = SECENEKLER[sk]; return `<div class="grup"><h4>${s.baslik}</h4>` +
+      s.liste.map((o, i) => `<label class="sec"><input type="${s.tip === 'tek' ? 'radio' : 'checkbox'}" name="${sk}" value="${i}"${s.tip === 'tek' && !i ? ' checked' : ''}>${o.ad}<span>${o.fiyat ? '+' + TL(o.fiyat) : ''}</span></label>`).join('') + '</div>'; }).join('') +
+    `<div class="grup"><h4>Not (isteğe bağlı)</h4><textarea id="urunNot" maxlength="120" placeholder="Örn. sos az olsun"></textarea></div>
+    <div class="alt"><div class="adetkutu"><button data-d="-1" aria-label="Azalt">−</button><b id="adet">1</b><button data-d="1" aria-label="Artır">+</button></div>
+    <button class="ana-btn" id="ekleBtn"><span>Sepete Ekle</span><span id="ekleTutar"></span></button></div>`);
+  const hesap = () => {
+    let birim = u.fiyat; const sec = [];
+    secs.forEach(sk => ic.querySelectorAll(`input[name=${sk}]:checked`).forEach(i => { const o = SECENEKLER[sk].liste[i.value]; birim += o.fiyat; if (o.fiyat || SECENEKLER[sk].tip === 'coklu') sec.push(o.ad); }));
+    document.getElementById('ekleTutar').textContent = TL(birim * adet);
+    return { birim, sec };
+  };
+  ic.onchange = hesap; hesap();
+  ic.querySelectorAll('[data-d]').forEach(x => x.onclick = () => { adet = Math.max(1, Math.min(20, adet + +x.dataset.d)); document.getElementById('adet').textContent = adet; hesap(); });
+  document.getElementById('ekleBtn').onclick = () => {
+    const { birim, sec } = hesap(), not = document.getElementById('urunNot').value.trim();
+    const anahtar = [u.ad, sec.join(','), not].join('|');
+    const var_ = sepet.find(s => s.anahtar === anahtar);
+    var_ ? var_.adet += adet : sepet.push({ anahtar, ad: u.ad, sec, not, birim, adet });
+    kaydet(); guncelle(); kapat();
+  };
+});
+
+function guncelle() {
+  const adet = sepet.reduce((a, s) => a + s.adet, 0), tutar = sepet.reduce((a, s) => a + s.adet * s.birim, 0);
+  document.getElementById('barAdet').textContent = adet;
+  document.getElementById('barTutar').textContent = TL(tutar);
+  document.getElementById('bar').classList.toggle('gizli', !adet);
+  document.querySelectorAll('.urun').forEach(b => {
+    const u = MENU[b.dataset.k].urunler[b.dataset.u], n = sepet.filter(s => s.ad === u.ad).reduce((a, s) => a + s.adet, 0);
+    b.querySelector('.ekle').innerHTML = '+' + (n ? `<i>${n}</i>` : '');
+  });
+  return tutar;
+}
+
+function sepetiAc() {
+  const tutar = guncelle();
+  if (!sepet.length) return ac('<h2>Sepetin</h2><p class="bos">Sepetin boş. Menüden bir şeyler ekle 🧇</p>');
+  ac(`<h2>Sepetin</h2>` + sepet.map((s, i) => `<div class="satir"><div class="ad">${esc(s.ad)}
+      ${s.sec.length || s.not ? `<small>${esc([...s.sec, s.not && '“' + s.not + '”'].filter(Boolean).join(' · '))}</small>` : ''}
+      <div class="mini"><button data-i="${i}" data-d="-1" aria-label="Azalt">−</button><b>${s.adet}</b><button data-i="${i}" data-d="1" aria-label="Artır">+</button></div></div>
+      <div class="f">${TL(s.birim * s.adet)}</div></div>`).join('') +
+    `<div class="toplam"><span>Toplam</span><b>${TL(tutar)}</b></div>
+    <div class="grup"><h4>Sipariş notu</h4><textarea id="genelNot" maxlength="200" placeholder="Mutfağa iletmek istediğin bir not var mı?"></textarea></div>
+    <button class="ana-btn" id="gonder"${masa ? '' : ' disabled'}><span>${masa ? 'Siparişi Gönder' : 'Masa QR kodunu okutmalısın'}</span><span>${TL(tutar)}</span></button>
+    <p class="odeme">Ödemeni kasada yapabilirsin.</p>`);
+  ic.querySelectorAll('[data-i]').forEach(b => b.onclick = () => {
+    const s = sepet[b.dataset.i]; s.adet += +b.dataset.d;
+    if (s.adet < 1) sepet.splice(b.dataset.i, 1);
+    kaydet(); sepetiAc();
+  });
+  const g = document.getElementById('gonder');
+  if (g) g.onclick = () => {
+    // Taslak: sipariş şimdilik sadece bu cihazda kaydedilir; mutfak ekranı bağlanınca sunucuya gidecek
+    const siparis = { no: Math.floor(100 + Math.random() * 900), masa, kalemler: sepet, not: document.getElementById('genelNot').value.trim(), toplam: tutar, zaman: new Date().toISOString() };
+    try { const eski = JSON.parse(localStorage.getItem('mw_siparisler') || '[]'); eski.push(siparis); localStorage.setItem('mw_siparisler', JSON.stringify(eski)); } catch (e) {}
+    sepet = []; kaydet(); guncelle();
+    ac(`<div class="onay"><div class="tik">✓</div><h2>Siparişin alındı!</h2>
+      <div class="no">Sipariş No: #${siparis.no} · Masa ${esc(masa)}</div>
+      <p>Waffle'ın şimdi pişmeye başlıyor. Hazır olunca masana getireceğiz. Afiyet olsun! 💕</p>
+      <button class="ana-btn" onclick="document.getElementById('kapat').click()" style="justify-content:center">Menüye Dön</button></div>`);
+  };
+}
+document.getElementById('sepetBtn').onclick = sepetiAc;
+guncelle();
+</script>
+</body>
+</html>
