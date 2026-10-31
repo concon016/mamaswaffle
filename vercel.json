@@ -1,5 +1,39 @@
 {
   "redirects": [
-    { "source": "/m/:masa(\\d{1,3})", "destination": "/siparis.html?masa=:masa", "permanent": false }
+    {
+      "source": "/m/:masa(\\d{1,3})",
+      "destination": "/siparis.html?masa=:masa",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://mamaswafflesiparis.vercel.app/api/:path*"
+    },
+    {
+      "source": "/mutfak",
+      "destination": "https://mamaswafflesiparis.vercel.app/"
+    },
+    {
+      "source": "/logo.png",
+      "destination": "https://mamaswafflesiparis.vercel.app/logo.png"
+    },
+    {
+      "source": "/apple-touch-icon.png",
+      "destination": "https://mamaswafflesiparis.vercel.app/apple-touch-icon.png"
+    },
+    {
+      "source": "/icon-192.png",
+      "destination": "https://mamaswafflesiparis.vercel.app/icon-192.png"
+    },
+    {
+      "source": "/icon-512.png",
+      "destination": "https://mamaswafflesiparis.vercel.app/icon-512.png"
+    },
+    {
+      "source": "/manifest.webmanifest",
+      "destination": "https://mamaswafflesiparis.vercel.app/manifest.webmanifest"
+    }
   ]
 }
