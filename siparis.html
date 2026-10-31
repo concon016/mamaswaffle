@@ -29,7 +29,7 @@ a{color:inherit;text-decoration:none}
 .masa{margin-left:auto;background:var(--paper);color:var(--plum);border-radius:16px;padding:6px 12px;text-align:center;line-height:1.05;flex-shrink:0}
 .masa b{display:block;font-family:'Alfa Slab One',serif;font-weight:400;font-size:1.5rem}
 .masa span{font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
-.taslak{background:#fff3c9;color:#6b4a00;font-size:.82rem;font-weight:700;text-align:center;padding:7px 12px}
+.gonder-hata{color:#c0392b;font-weight:800;margin-top:10px;text-align:center}
 
 /* Kategori çipleri */
 .chips{position:sticky;top:0;z-index:20;background:var(--cream);border-bottom:2px solid var(--line)}
@@ -120,8 +120,6 @@ textarea:focus{outline:none;border-color:var(--plum)}
 </head>
 <body>
 
-<div class="taslak">Taslak sürüm: siparişler henüz mutfağa iletilmiyor.</div>
-
 <header class="top">
   <div class="wrap row">
     <img src="images/logo-320.webp" alt="Mama's Waffle" width="54" height="54">
@@ -179,6 +177,7 @@ kisiBtn.onclick = isimIste;
 isimGoster();
 if (masa && !isim) isimIste();
 
+const SIPARIS_API = 'https://mamaswafflesiparis.vercel.app/api/siparis';
 const TL = n => n.toLocaleString('tr-TR') + '₺';
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 let sepet = [];
@@ -277,16 +276,28 @@ function sepetiAc() {
   });
   document.getElementById('isimDegis').onclick = isimIste;
   const g = document.getElementById('gonder');
-  if (g) g.onclick = () => {
+  if (g) g.onclick = async () => {
     if (!isim) return isimIste();
-    // Taslak: sipariş şimdilik sadece bu cihazda kaydedilir; mutfak ekranı bağlanınca sunucuya gidecek
-    const siparis = { no: Math.floor(100 + Math.random() * 900), masa, isim, kalemler: sepet, not: document.getElementById('genelNot').value.trim(), toplam: tutar, zaman: new Date().toISOString() };
-    try { const eski = JSON.parse(localStorage.getItem('mw_siparisler') || '[]'); eski.push(siparis); localStorage.setItem('mw_siparisler', JSON.stringify(eski)); } catch (e) {}
-    sepet = []; kaydet(); guncelle();
-    ac(`<div class="onay"><div class="tik">✓</div><h2>Siparişin alındı!</h2>
-      <div class="no">Sipariş No: #${siparis.no} · Masa ${esc(masa)} · ${esc(siparis.isim)}</div>
-      <p>Waffle'ın şimdi pişmeye başlıyor. Hazır olunca masana getireceğiz. Afiyet olsun! 💕</p>
-      <button class="ana-btn" onclick="document.getElementById('kapat').click()" style="justify-content:center">Menüye Dön</button></div>`);
+    const metin = g.querySelector('span'), eskiMetin = metin.textContent;
+    g.disabled = true; metin.textContent = 'Gönderiliyor…';
+    const eskiHata = document.getElementById('gonderHata'); if (eskiHata) eskiHata.remove();
+    try {
+      const r = await fetch(SIPARIS_API, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ masa, isim, kalemler: sepet.map(({ ad, adet, birim, sec, not }) => ({ ad, adet, birim, sec, not })), not: document.getElementById('genelNot').value.trim() })
+      });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok || !j.ok) throw new Error(j.hata || 'Sipariş gönderilemedi.');
+      sepet = []; kaydet(); guncelle();
+      ac(`<div class="onay"><div class="tik">✓</div><h2>Siparişin alındı!</h2>
+        <div class="no">Sipariş No: #${j.no} · Masa ${esc(masa)} · ${esc(isim)}</div>
+        <p>Siparişin mutfağa iletildi, waffle'ın şimdi pişmeye başlıyor. Hazır olunca masana getireceğiz. Afiyet olsun! 💕</p>
+        <button class="ana-btn" onclick="document.getElementById('kapat').click()" style="justify-content:center">Menüye Dön</button></div>`);
+    } catch (e) {
+      g.disabled = false; metin.textContent = eskiMetin;
+      const m = e instanceof TypeError ? 'Bağlantı kurulamadı. İnternetini kontrol edip tekrar dene.' : e.message;
+      g.insertAdjacentHTML('afterend', `<p class="gonder-hata" id="gonderHata">${esc(m)}</p>`);
+    }
   };
 }
 document.getElementById('sepetBtn').onclick = sepetiAc;
