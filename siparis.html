@@ -102,6 +102,20 @@ textarea:focus{outline:none;border-color:var(--plum)}
 .onay .no{display:inline-block;margin-top:12px;background:var(--blush);border:2px dashed var(--rose);border-radius:14px;padding:8px 18px;font-weight:800}
 .onay p{color:var(--muted);margin-top:12px}
 .bos{text-align:center;color:var(--muted);padding:30px 0}
+.kisi{margin-top:8px;background:rgba(255,255,255,.14);color:var(--paper);border:1.5px solid rgba(255,255,255,.35);border-radius:999px;padding:4px 12px;font:inherit;font-weight:800;font-size:.8rem;cursor:pointer}
+.kisi[hidden]{display:none}
+.kisi-satir{margin-top:14px;background:var(--blush);border:2px dashed var(--rose);border-radius:14px;padding:10px 14px;font-weight:700;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.kisi-satir button{background:none;border:0;color:var(--plum);text-decoration:underline;font:inherit;font-weight:800;cursor:pointer}
+.isim-kapi{position:fixed;inset:0;z-index:100;background:rgba(58,14,30,.78);display:flex;align-items:center;justify-content:center;padding:20px}
+.isim-kapi[hidden]{display:none}
+.isim-kutu{background:var(--paper);border:3px solid var(--plum);border-radius:26px;padding:26px 22px;max-width:380px;width:100%;text-align:center}
+.isim-kutu img{width:64px;height:64px;border-radius:50%}
+.isim-kutu h2{padding:0;margin-top:10px}
+.isim-kutu p{color:var(--muted);margin-top:8px;font-weight:700;font-size:.95rem}
+.isim-kutu input{width:100%;margin-top:16px;border:2px solid var(--plum);border-radius:14px;padding:13px;font:inherit;font-weight:800;font-size:1.1rem;text-align:center;background:#fff;color:var(--plum)}
+.isim-kutu input:focus{outline:none;border-color:var(--rose-2)}
+.isim-kutu button{display:block;width:100%;margin-top:14px;background:var(--plum);color:var(--paper);border:0;border-radius:16px;padding:14px;font:inherit;font-weight:800;font-size:1.05rem;cursor:pointer}
+.isim-kutu button:disabled{opacity:.45;cursor:not-allowed}
 </style>
 </head>
 <body>
@@ -111,7 +125,7 @@ textarea:focus{outline:none;border-color:var(--plum)}
 <header class="top">
   <div class="wrap row">
     <img src="images/logo-320.webp" alt="Mama's Waffle" width="54" height="54">
-    <div><h1>Mama's Waffle</h1><small>Seç, ekle, sipariş ver 🧇</small></div>
+    <div><h1>Mama's Waffle</h1><small>Seç, ekle, sipariş ver 🧇</small><button class="kisi" id="kisiBtn" hidden></button></div>
     <div class="masa" id="masaKutu"><span>Masa</span><b id="masaNo">–</b></div>
   </div>
 </header>
@@ -121,6 +135,16 @@ textarea:focus{outline:none;border-color:var(--plum)}
 
 <div class="bar gizli" id="bar"><button id="sepetBtn"><span class="adet" id="barAdet">0</span>Sepeti Gör<span class="tutar" id="barTutar">0₺</span></button></div>
 
+<div class="isim-kapi" id="isimKapi" hidden>
+  <div class="isim-kutu" role="dialog" aria-modal="true" aria-labelledby="isimBaslik">
+    <img src="images/logo-320.webp" alt="">
+    <h2 id="isimBaslik">Hoş geldin!</h2>
+    <p>Masadaki herkes kendi siparişini verebilir. Kimin ne istediği karışmasın diye adını yaz.</p>
+    <input id="isimGiris" maxlength="24" placeholder="Adın" autocomplete="given-name" enterkeyhint="done">
+    <button id="isimTamam" disabled>Devam</button>
+  </div>
+</div>
+
 <div class="perde" id="perde"></div>
 <section class="panel" id="panel" role="dialog" aria-modal="true"><div class="tut"></div><button class="kapat" id="kapat" aria-label="Kapat">✕</button><div id="panelIc"></div></section>
 
@@ -129,6 +153,31 @@ textarea:focus{outline:none;border-color:var(--plum)}
 const masa = (new URLSearchParams(location.search).get('masa') || '').replace(/\D/g, '').slice(0, 3);
 document.getElementById('masaNo').textContent = masa || '?';
 if (!masa) document.getElementById('masaKutu').style.display = 'none';
+
+// Sipariş sahibinin adı (bu sekme için hatırlanır, her sipariş öncesi zorunlu)
+let isim = '';
+try { isim = sessionStorage.getItem('mw_isim') || ''; } catch (e) {}
+const kapi = document.getElementById('isimKapi'), giris = document.getElementById('isimGiris'), tamam = document.getElementById('isimTamam'), kisiBtn = document.getElementById('kisiBtn');
+function isimGoster() {
+  kisiBtn.hidden = !(masa && isim);
+  kisiBtn.textContent = '👤 ' + isim + ' · değiştir';
+}
+function isimIste() {
+  giris.value = isim; tamam.disabled = giris.value.trim().length < 2; kapi.hidden = false; setTimeout(() => giris.focus(), 50);
+}
+function isimKaydet() {
+  const v = giris.value.trim().replace(/\s+/g, ' ').slice(0, 24);
+  if (v.length < 2) return;
+  isim = v; try { sessionStorage.setItem('mw_isim', isim); } catch (e) {}
+  kapi.hidden = true; isimGoster();
+  if (document.getElementById('panel').classList.contains('acik')) sepetiAc();
+}
+giris.addEventListener('input', () => { tamam.disabled = giris.value.trim().length < 2; });
+giris.addEventListener('keydown', e => { if (e.key === 'Enter') isimKaydet(); });
+tamam.onclick = isimKaydet;
+kisiBtn.onclick = isimIste;
+isimGoster();
+if (masa && !isim) isimIste();
 
 const TL = n => n.toLocaleString('tr-TR') + '₺';
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -217,6 +266,7 @@ function sepetiAc() {
       <div class="mini"><button data-i="${i}" data-d="-1" aria-label="Azalt">−</button><b>${s.adet}</b><button data-i="${i}" data-d="1" aria-label="Artır">+</button></div></div>
       <div class="f">${TL(s.birim * s.adet)}</div></div>`).join('') +
     `<div class="toplam"><span>Toplam</span><b>${TL(tutar)}</b></div>
+    <div class="kisi-satir"><span>Sipariş sahibi: <b>${esc(isim || '—')}</b></span><button id="isimDegis" type="button">değiştir</button></div>
     <div class="grup"><h4>Sipariş notu</h4><textarea id="genelNot" maxlength="200" placeholder="Mutfağa iletmek istediğin bir not var mı?"></textarea></div>
     <button class="ana-btn" id="gonder"${masa ? '' : ' disabled'}><span>${masa ? 'Siparişi Gönder' : 'Masa QR kodunu okutmalısın'}</span><span>${TL(tutar)}</span></button>
     <p class="odeme">Ödemeni kasada yapabilirsin.</p>`);
@@ -225,14 +275,16 @@ function sepetiAc() {
     if (s.adet < 1) sepet.splice(b.dataset.i, 1);
     kaydet(); sepetiAc();
   });
+  document.getElementById('isimDegis').onclick = isimIste;
   const g = document.getElementById('gonder');
   if (g) g.onclick = () => {
+    if (!isim) return isimIste();
     // Taslak: sipariş şimdilik sadece bu cihazda kaydedilir; mutfak ekranı bağlanınca sunucuya gidecek
-    const siparis = { no: Math.floor(100 + Math.random() * 900), masa, kalemler: sepet, not: document.getElementById('genelNot').value.trim(), toplam: tutar, zaman: new Date().toISOString() };
+    const siparis = { no: Math.floor(100 + Math.random() * 900), masa, isim, kalemler: sepet, not: document.getElementById('genelNot').value.trim(), toplam: tutar, zaman: new Date().toISOString() };
     try { const eski = JSON.parse(localStorage.getItem('mw_siparisler') || '[]'); eski.push(siparis); localStorage.setItem('mw_siparisler', JSON.stringify(eski)); } catch (e) {}
     sepet = []; kaydet(); guncelle();
     ac(`<div class="onay"><div class="tik">✓</div><h2>Siparişin alındı!</h2>
-      <div class="no">Sipariş No: #${siparis.no} · Masa ${esc(masa)}</div>
+      <div class="no">Sipariş No: #${siparis.no} · Masa ${esc(masa)} · ${esc(siparis.isim)}</div>
       <p>Waffle'ın şimdi pişmeye başlıyor. Hazır olunca masana getireceğiz. Afiyet olsun! 💕</p>
       <button class="ana-btn" onclick="document.getElementById('kapat').click()" style="justify-content:center">Menüye Dön</button></div>`);
   };
