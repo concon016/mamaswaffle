@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/m/:masa(\\d{1,3})", "destination": "/siparis.html?masa=:masa", "permanent": false }
+  ]
+}
