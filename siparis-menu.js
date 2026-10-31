@@ -81,26 +81,6 @@ const MENU = [
   "kisa": "Waffle"
  },
  {
-  "id": "fit",
-  "ad": "Protein Waffle",
-  "urunler": [
-   {
-    "ad": "Protein Waffle",
-    "fiyat": 200,
-    "aciklama": "Yulaf-protein hamuru, fıstık ezmesi, muz, süzme yoğurt",
-    "etiket": "Fit"
-   },
-   {
-    "ad": "Kakaolu Protein",
-    "fiyat": 200,
-    "aciklama": "Kakaolu protein hamuru, orman meyveleri, şekersiz çikolata sos",
-    "etiket": "Fit"
-   }
-  ],
-  "ikon": "💪",
-  "kisa": "Protein"
- },
- {
   "id": "sicak",
   "ad": "Sıcak Kahveler",
   "urunler": [
@@ -213,82 +193,6 @@ const MENU = [
   "kisa": "Soğuk Kahve"
  },
  {
-  "id": "frappe",
-  "ad": "Frappe",
-  "urunler": [
-   {
-    "ad": "Caramel Frappe",
-    "fiyat": 165,
-    "aciklama": "Kahve, süt, karamel, krema",
-    "etiket": ""
-   },
-   {
-    "ad": "Mocha Frappe",
-    "fiyat": 165,
-    "aciklama": "Kahve, çikolata sos, süt, krema",
-    "etiket": ""
-   },
-   {
-    "ad": "Java Chip Frappe",
-    "fiyat": 175,
-    "aciklama": "Kahve, çikolata parçacıkları, mocha sos, krema",
-    "etiket": ""
-   },
-   {
-    "ad": "Çilekli Kremalı Frappe",
-    "fiyat": 165,
-    "aciklama": "Kahvesiz, çilek püresi, süt, krema",
-    "etiket": ""
-   }
-  ],
-  "ikon": "🥤",
-  "kisa": "Frappe"
- },
- {
-  "id": "kokteyl",
-  "ad": "Kokteyller",
-  "urunler": [
-   {
-    "ad": "Cool Lime",
-    "fiyat": 140,
-    "aciklama": "Lime, nane, salatalık dilimleri, buz",
-    "etiket": ""
-   },
-   {
-    "ad": "Hibiscus",
-    "fiyat": 140,
-    "aciklama": "Hibiskus, frambuaz ve böğürtlen aroması, buz",
-    "etiket": ""
-   },
-   {
-    "ad": "Mango Dragonfruit",
-    "fiyat": 145,
-    "aciklama": "Mango, ejder meyvesi parçaları, buz",
-    "etiket": ""
-   },
-   {
-    "ad": "Pink Drink",
-    "fiyat": 155,
-    "aciklama": "Çilek ve açaí, hindistan cevizi sütü, çilek dilimleri",
-    "etiket": "Yeni"
-   },
-   {
-    "ad": "Çilekli Limonata",
-    "fiyat": 120,
-    "aciklama": "Taze limon, çilek püresi, nane",
-    "etiket": ""
-   },
-   {
-    "ad": "Naneli Limonata",
-    "fiyat": 110,
-    "aciklama": "Ev yapımı, taze nane",
-    "etiket": ""
-   }
-  ],
-  "ikon": "🍹",
-  "kisa": "Kokteyl"
- },
- {
   "id": "diger",
   "ad": "Diğer İçecekler",
   "urunler": [
@@ -308,6 +212,18 @@ const MENU = [
     "ad": "Matcha Latte",
     "fiyat": 150,
     "aciklama": "Sıcak ya da buzlu",
+    "etiket": ""
+   },
+   {
+    "ad": "Çilekli Limonata",
+    "fiyat": 120,
+    "aciklama": "Taze limon, çilek püresi, nane",
+    "etiket": ""
+   },
+   {
+    "ad": "Naneli Limonata",
+    "fiyat": 110,
+    "aciklama": "Ev yapımı, taze nane",
     "etiket": ""
    },
    {
@@ -334,6 +250,6 @@ const SECENEKLER = {
   boy: { baslik: 'Boy', tip: 'tek', liste: [{ ad: 'Tall', fiyat: 0 }, { ad: 'Grande', fiyat: 20 }] },
   sut: { baslik: 'Süt', tip: 'tek', liste: [{ ad: 'Normal süt', fiyat: 0 }, { ad: 'Laktozsuz', fiyat: 20 }, { ad: 'Badem sütü', fiyat: 20 }, { ad: 'Yulaf sütü', fiyat: 20 }] }
 };
-const KATEGORI_SECENEK = { waffle: ['ekstra'], fit: ['ekstra'], sicak: ['boy', 'sut'], soguk: ['boy', 'sut'], frappe: ['sut'] };
+const KATEGORI_SECENEK = { waffle: ['ekstra'], sicak: ['boy', 'sut'], soguk: ['boy', 'sut'] };
 const SUTSUZ = ['Espresso', 'Americano', 'Filtre Kahve', 'Türk Kahvesi', 'Iced Americano', 'Cold Brew'];
 const SECENEKSIZ = ['Türk Kahvesi'];
