@@ -29,13 +29,13 @@ const MENU = [
     "etiket": ""
    },
    {
-    "ad": "Klasik",
+    "ad": "Classic",
     "fiyat": 0,
     "aciklama": "",
     "etiket": ""
    },
    {
-    "ad": "Kendin Yarat",
+    "ad": "Kendin Tasarla",
     "fiyat": 0,
     "aciklama": "",
     "etiket": ""
