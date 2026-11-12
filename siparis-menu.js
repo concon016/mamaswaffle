@@ -5,7 +5,7 @@ const MENU = [
   "ad": "Waffle'lar",
   "urunler": [
    {
-    "ad": "Dubai Waffle",
+    "ad": "Dubai Night Waffle",
     "fiyat": 0,
     "aciklama": "",
     "etiket": ""
