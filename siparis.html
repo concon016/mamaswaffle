@@ -229,7 +229,7 @@ liste.addEventListener('click', e => {
     <button class="ana-btn" id="ekleBtn"><span>Sepete Ekle</span><span id="ekleTutar"></span></button></div>`);
   const hesap = () => {
     let birim = u.fiyat; const sec = [];
-    secs.forEach(sk => ic.querySelectorAll(`input[name=${sk}]:checked`).forEach(i => { const o = SECENEKLER[sk].liste[i.value]; birim += o.fiyat; if (o.fiyat || SECENEKLER[sk].tip === 'coklu') sec.push(o.ad); }));
+    secs.forEach(sk => ic.querySelectorAll(`input[name=${sk}]:checked`).forEach(i => { const o = SECENEKLER[sk].liste[i.value]; birim += o.fiyat; if (o.fiyat || SECENEKLER[sk].tip === 'coklu' || Number(i.value) > 0) sec.push(o.ad); }));
     document.getElementById('ekleTutar').textContent = TL(birim * adet);
     return { birim, sec };
   };
