@@ -172,13 +172,13 @@ const MENU = [
    },
    {
     "ad": "Ice Mocha",
-    "fiyat": 0,
+    "fiyat": 190,
     "aciklama": "",
     "etiket": ""
    },
    {
     "ad": "Ice White Chocolate Mocha",
-    "fiyat": 160,
+    "fiyat": 190,
     "aciklama": "",
     "etiket": ""
    },
