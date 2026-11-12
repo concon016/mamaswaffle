@@ -35,7 +35,7 @@ const MENU = [
     "etiket": ""
    },
    {
-    "ad": "White Velvet",
+    "ad": "Snow Angel",
     "fiyat": 0,
     "aciklama": "",
     "etiket": ""
