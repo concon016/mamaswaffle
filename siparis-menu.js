@@ -35,7 +35,7 @@ const MENU = [
     "etiket": ""
    },
    {
-    "ad": "Snow Angel",
+    "ad": "White Milky",
     "fiyat": 0,
     "aciklama": "",
     "etiket": ""
