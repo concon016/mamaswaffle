@@ -17,7 +17,7 @@ const MENU = [
     "etiket": ""
    },
    {
-    "ad": "Lotus Waffle",
+    "ad": "Choco Caramel Waffle",
     "fiyat": 0,
     "aciklama": "",
     "etiket": ""
