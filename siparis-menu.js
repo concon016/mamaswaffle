@@ -58,7 +58,7 @@ const MENU = [
  },
  {
   "id": "sicak",
-  "ad": "Sıcak Kahveler",
+  "ad": "Sıcak İçecekler",
   "urunler": [
    {
     "ad": "Espresso",
@@ -125,14 +125,20 @@ const MENU = [
     "fiyat": 120,
     "aciklama": "",
     "etiket": ""
+   },
+   {
+    "ad": "Çay",
+    "fiyat": 50,
+    "aciklama": "",
+    "etiket": ""
    }
   ],
   "ikon": "☕",
-  "kisa": "Sıcak Kahve"
+  "kisa": "Sıcak"
  },
  {
   "id": "soguk",
-  "ad": "Soğuk Kahveler",
+  "ad": "Soğuk İçecekler",
   "urunler": [
    {
     "ad": "Ice Americano",
@@ -169,31 +175,17 @@ const MENU = [
     "fiyat": 150,
     "aciklama": "",
     "etiket": ""
-   }
-  ],
-  "ikon": "🧊",
-  "kisa": "Soğuk Kahve"
- },
- {
-  "id": "diger",
-  "ad": "Diğer İçecekler",
-  "urunler": [
-   {
-    "ad": "Çay",
-    "fiyat": 50,
-    "aciklama": "İnce belli bardakta",
-    "etiket": ""
    },
    {
     "ad": "Cool Lime",
     "fiyat": 180,
-    "aciklama": "Buzlu, soğuk",
+    "aciklama": "",
     "etiket": ""
    },
    {
     "ad": "Berry Hibiscus",
     "fiyat": 180,
-    "aciklama": "Buzlu, soğuk",
+    "aciklama": "",
     "etiket": ""
    },
    {
@@ -209,8 +201,8 @@ const MENU = [
     "etiket": ""
    }
   ],
-  "ikon": "🫖",
-  "kisa": "Diğer"
+  "ikon": "🧊",
+  "kisa": "Soğuk"
  }
 ];
 
@@ -221,5 +213,5 @@ const SECENEKLER = {
   sut: { baslik: 'Süt', tip: 'tek', liste: [{ ad: 'Normal süt', fiyat: 0 }, { ad: 'Laktozsuz', fiyat: 0 }] }
 };
 const KATEGORI_SECENEK = { sicak: ['sut'], soguk: ['sut'] };
-const SUTSUZ = ['Espresso', 'Americano', 'Filtre Kahve', 'Türk Kahvesi', 'Ice Americano', 'Ice Filtre Kahve', 'Double Espresso', 'Double Türk Kahvesi'];
-const SECENEKSIZ = ['Türk Kahvesi', 'Double Türk Kahvesi'];
+const SUTSUZ = ['Espresso', 'Americano', 'Filtre Kahve', 'Türk Kahvesi', 'Ice Americano', 'Ice Filtre Kahve', 'Double Espresso', 'Double Türk Kahvesi', 'Çay', 'Cool Lime', 'Berry Hibiscus', 'Soda', 'Su'];
+const SECENEKSIZ = ['Türk Kahvesi', 'Double Türk Kahvesi', 'Çay', 'Cool Lime', 'Berry Hibiscus', 'Soda', 'Su'];
