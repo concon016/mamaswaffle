@@ -117,13 +117,13 @@ const MENU = [
    {
     "ad": "Türk Kahvesi",
     "fiyat": 100,
-    "aciklama": "Lokumuyla",
+    "aciklama": "",
     "etiket": ""
    },
    {
     "ad": "Double Türk Kahvesi",
     "fiyat": 120,
-    "aciklama": "Lokumuyla",
+    "aciklama": "",
     "etiket": ""
    }
   ],
