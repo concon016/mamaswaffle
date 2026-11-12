@@ -225,7 +225,7 @@ liste.addEventListener('click', e => {
   ac(`<h2>${esc(u.ad)}</h2><p class="acik-not">${esc(u.aciklama)}</p>` +
     secs.map(sk => { const s = SECENEKLER[sk]; return `<div class="grup"><h4>${s.baslik}</h4>` +
       s.liste.map((o, i) => `<label class="sec"><input type="${s.tip === 'tek' ? 'radio' : 'checkbox'}" name="${sk}" value="${i}"${s.tip === 'tek' && !i ? ' checked' : ''}>${o.ad}<span>${o.fiyat ? '+' + TL(o.fiyat) : ''}</span></label>`).join('') + '</div>'; }).join('') +
-    `<div class="grup"><h4>Not (isteğe bağlı)</h4><textarea id="urunNot" maxlength="120" placeholder="Örn. sos az olsun"></textarea></div>
+    `<div class="grup"><h4>Not (isteğe bağlı)</h4><textarea id="urunNot" maxlength="120"></textarea></div>
     <div class="alt"><div class="adetkutu"><button data-d="-1" aria-label="Azalt">−</button><b id="adet">1</b><button data-d="1" aria-label="Artır">+</button></div>
     <button class="ana-btn" id="ekleBtn"><span>Sepete Ekle</span><span id="ekleTutar"></span></button></div>`);
   const hesap = () => {
