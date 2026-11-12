@@ -86,67 +86,67 @@ const MENU = [
   "urunler": [
    {
     "ad": "Espresso",
-    "fiyat": 85,
+    "fiyat": 90,
     "aciklama": "",
     "etiket": ""
    },
    {
     "ad": "Double Espresso",
-    "fiyat": 0,
+    "fiyat": 150,
     "aciklama": "",
     "etiket": ""
    },
    {
     "ad": "Americano",
-    "fiyat": 105,
+    "fiyat": 160,
     "aciklama": "",
     "etiket": ""
    },
    {
     "ad": "Latte",
-    "fiyat": 125,
+    "fiyat": 180,
     "aciklama": "",
     "etiket": ""
    },
    {
     "ad": "Cappuccino",
-    "fiyat": 125,
+    "fiyat": 180,
     "aciklama": "",
     "etiket": ""
    },
    {
     "ad": "Mocha",
-    "fiyat": 145,
+    "fiyat": 190,
     "aciklama": "",
     "etiket": ""
    },
    {
     "ad": "White Chocolate Mocha",
-    "fiyat": 150,
+    "fiyat": 190,
     "aciklama": "",
     "etiket": ""
    },
    {
     "ad": "Karamel Latte",
-    "fiyat": 150,
+    "fiyat": 190,
     "aciklama": "",
     "etiket": ""
    },
    {
     "ad": "Filtre Kahve",
-    "fiyat": 95,
+    "fiyat": 150,
     "aciklama": "",
     "etiket": ""
    },
    {
     "ad": "Türk Kahvesi",
-    "fiyat": 85,
+    "fiyat": 100,
     "aciklama": "Lokumuyla",
     "etiket": ""
    },
    {
     "ad": "Double Türk Kahvesi",
-    "fiyat": 0,
+    "fiyat": 120,
     "aciklama": "Lokumuyla",
     "etiket": ""
    }
@@ -160,13 +160,13 @@ const MENU = [
   "urunler": [
    {
     "ad": "Ice Americano",
-    "fiyat": 115,
+    "fiyat": 160,
     "aciklama": "",
     "etiket": ""
    },
    {
     "ad": "Ice Latte",
-    "fiyat": 135,
+    "fiyat": 180,
     "aciklama": "",
     "etiket": ""
    },
@@ -184,13 +184,13 @@ const MENU = [
    },
    {
     "ad": "Ice Karamel Latte",
-    "fiyat": 160,
+    "fiyat": 190,
     "aciklama": "",
     "etiket": ""
    },
    {
     "ad": "Ice Filtre Kahve",
-    "fiyat": 0,
+    "fiyat": 150,
     "aciklama": "",
     "etiket": ""
    }
@@ -204,31 +204,31 @@ const MENU = [
   "urunler": [
    {
     "ad": "Çay",
-    "fiyat": 35,
+    "fiyat": 50,
     "aciklama": "İnce belli bardakta",
     "etiket": ""
    },
    {
     "ad": "Cool Lime",
-    "fiyat": 0,
+    "fiyat": 180,
     "aciklama": "Buzlu, soğuk",
     "etiket": ""
    },
    {
     "ad": "Berry Hibiscus",
-    "fiyat": 0,
+    "fiyat": 180,
     "aciklama": "Buzlu, soğuk",
     "etiket": ""
    },
    {
     "ad": "Soda",
-    "fiyat": 30,
+    "fiyat": 50,
     "aciklama": "",
     "etiket": ""
    },
    {
     "ad": "Su",
-    "fiyat": 30,
+    "fiyat": 40,
     "aciklama": "",
     "etiket": ""
    }
