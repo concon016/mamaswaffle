@@ -6,19 +6,19 @@ const MENU = [
   "urunler": [
    {
     "ad": "Dubai Waffle",
-    "fiyat": 230,
+    "fiyat": 0,
     "aciklama": "",
     "etiket": ""
    },
    {
     "ad": "Oreo Waffle",
-    "fiyat": 185,
+    "fiyat": 0,
     "aciklama": "",
     "etiket": ""
    },
    {
     "ad": "Lotus Waffle",
-    "fiyat": 190,
+    "fiyat": 0,
     "aciklama": "",
     "etiket": ""
    },
@@ -30,7 +30,7 @@ const MENU = [
    },
    {
     "ad": "Klasik Waffle",
-    "fiyat": 160,
+    "fiyat": 0,
     "aciklama": "",
     "etiket": ""
    },
