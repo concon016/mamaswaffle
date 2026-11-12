@@ -35,6 +35,12 @@ const MENU = [
     "etiket": ""
    },
    {
+    "ad": "White Velvet",
+    "fiyat": 0,
+    "aciklama": "",
+    "etiket": ""
+   },
+   {
     "ad": "Classic",
     "fiyat": 0,
     "aciklama": "",
