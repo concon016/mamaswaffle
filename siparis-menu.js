@@ -23,7 +23,7 @@ const MENU = [
     "etiket": ""
    },
    {
-    "ad": "Colourful Waffle",
+    "ad": "Bonbonella Waffle",
     "fiyat": 0,
     "aciklama": "",
     "etiket": ""
