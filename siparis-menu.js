@@ -5,37 +5,37 @@ const MENU = [
   "ad": "Waffle'lar",
   "urunler": [
    {
-    "ad": "Dubai Night Waffle",
+    "ad": "Dubai Night",
     "fiyat": 0,
     "aciklama": "",
     "etiket": ""
    },
    {
-    "ad": "Crispy Dream Waffle",
+    "ad": "Crispy Dream",
     "fiyat": 0,
     "aciklama": "",
     "etiket": ""
    },
    {
-    "ad": "Choco Caramel Waffle",
+    "ad": "Choco Caramel",
     "fiyat": 0,
     "aciklama": "",
     "etiket": ""
    },
    {
-    "ad": "Bonbonella Waffle",
+    "ad": "Bonbonella",
     "fiyat": 0,
     "aciklama": "",
     "etiket": ""
    },
    {
-    "ad": "Klasik Waffle",
+    "ad": "Klasik",
     "fiyat": 0,
     "aciklama": "",
     "etiket": ""
    },
    {
-    "ad": "Kendin Yarat Waffle",
+    "ad": "Kendin Yarat",
     "fiyat": 0,
     "aciklama": "",
     "etiket": ""
