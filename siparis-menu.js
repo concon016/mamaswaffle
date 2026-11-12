@@ -5,6 +5,18 @@ const MENU = [
   "ad": "Waffle'lar",
   "urunler": [
    {
+    "ad": "Kendin Tasarla",
+    "fiyat": 0,
+    "aciklama": "",
+    "etiket": ""
+   },
+   {
+    "ad": "Classic",
+    "fiyat": 0,
+    "aciklama": "",
+    "etiket": ""
+   },
+   {
     "ad": "Dubai Night",
     "fiyat": 0,
     "aciklama": "",
@@ -36,18 +48,6 @@ const MENU = [
    },
    {
     "ad": "White Milky",
-    "fiyat": 0,
-    "aciklama": "",
-    "etiket": ""
-   },
-   {
-    "ad": "Classic",
-    "fiyat": 0,
-    "aciklama": "",
-    "etiket": ""
-   },
-   {
-    "ad": "Kendin Tasarla",
     "fiyat": 0,
     "aciklama": "",
     "etiket": ""
