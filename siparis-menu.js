@@ -91,6 +91,12 @@ const MENU = [
     "etiket": ""
    },
    {
+    "ad": "Double Espresso",
+    "fiyat": 0,
+    "aciklama": "",
+    "etiket": ""
+   },
+   {
     "ad": "Americano",
     "fiyat": 105,
     "aciklama": "",
@@ -137,6 +143,12 @@ const MENU = [
     "fiyat": 85,
     "aciklama": "Lokumuyla",
     "etiket": ""
+   },
+   {
+    "ad": "Double Türk Kahvesi",
+    "fiyat": 0,
+    "aciklama": "Lokumuyla",
+    "etiket": ""
    }
   ],
   "ikon": "☕",
@@ -159,6 +171,12 @@ const MENU = [
     "etiket": ""
    },
    {
+    "ad": "Ice Mocha",
+    "fiyat": 0,
+    "aciklama": "",
+    "etiket": ""
+   },
+   {
     "ad": "Ice White Chocolate Mocha",
     "fiyat": 160,
     "aciklama": "",
@@ -167,6 +185,12 @@ const MENU = [
    {
     "ad": "Ice Karamel Latte",
     "fiyat": 160,
+    "aciklama": "",
+    "etiket": ""
+   },
+   {
+    "ad": "Ice Filtre Kahve",
+    "fiyat": 0,
     "aciklama": "",
     "etiket": ""
    }
@@ -182,6 +206,18 @@ const MENU = [
     "ad": "Çay",
     "fiyat": 35,
     "aciklama": "İnce belli bardakta",
+    "etiket": ""
+   },
+   {
+    "ad": "Cool Lime",
+    "fiyat": 0,
+    "aciklama": "Buzlu, soğuk",
+    "etiket": ""
+   },
+   {
+    "ad": "Berry Hibiscus",
+    "fiyat": 0,
+    "aciklama": "Buzlu, soğuk",
     "etiket": ""
    },
    {

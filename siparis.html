@@ -192,7 +192,7 @@ MENU.forEach((k, ki) => {
     k.urunler.map((u, ui) => `<button class="urun" data-k="${ki}" data-u="${ui}">
       <div class="ik">${k.ikon}</div>
       <div class="bilgi"><h3>${esc(u.ad)}${u.etiket ? ` <span class="etiket ${u.etiket}">${u.etiket}</span>` : ''}</h3>
-      ${u.aciklama ? `<p>${esc(u.aciklama)}</p>` : ''}<div class="fiyat">${TL(u.fiyat)}</div></div>
+      ${u.aciklama ? `<p>${esc(u.aciklama)}</p>` : ''}${u.fiyat ? `<div class="fiyat">${TL(u.fiyat)}</div>` : ''}</div>
       <span class="ekle" aria-hidden="true">+</span></button>`).join('') + '</section>');
 });
 
@@ -263,7 +263,7 @@ function sepetiAc() {
   ac(`<h2>Sepetin</h2>` + sepet.map((s, i) => `<div class="satir"><div class="ad">${esc(s.ad)}
       ${s.sec.length || s.not ? `<small>${esc([...s.sec, s.not && '“' + s.not + '”'].filter(Boolean).join(' · '))}</small>` : ''}
       <div class="mini"><button data-i="${i}" data-d="-1" aria-label="Azalt">−</button><b>${s.adet}</b><button data-i="${i}" data-d="1" aria-label="Artır">+</button></div></div>
-      <div class="f">${TL(s.birim * s.adet)}</div></div>`).join('') +
+      <div class="f">${s.birim ? TL(s.birim * s.adet) : ""}</div></div>`).join('') +
     `<div class="toplam"><span>Toplam</span><b>${TL(tutar)}</b></div>
     <div class="kisi-satir"><span>Sipariş sahibi: <b>${esc(isim || '—')}</b></span><button id="isimDegis" type="button">değiştir</button></div>
     <div class="grup"><h4>Sipariş notu</h4><textarea id="genelNot" maxlength="200" placeholder="Mutfağa iletmek istediğin bir not var mı?"></textarea></div>
