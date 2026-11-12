@@ -244,6 +244,6 @@ const SECENEKLER = {
   boy: { baslik: 'Boy', tip: 'tek', liste: [{ ad: 'Tall', fiyat: 0 }, { ad: 'Grande', fiyat: 20 }] },
   sut: { baslik: 'Süt', tip: 'tek', liste: [{ ad: 'Normal süt', fiyat: 0 }, { ad: 'Laktozsuz', fiyat: 20 }, { ad: 'Badem sütü', fiyat: 20 }, { ad: 'Yulaf sütü', fiyat: 20 }] }
 };
-const KATEGORI_SECENEK = { waffle: ['ekstra'], sicak: ['boy', 'sut'], soguk: ['boy', 'sut'] };
+const KATEGORI_SECENEK = { waffle: ['ekstra'], sicak: ['sut'], soguk: ['sut'] };
 const SUTSUZ = ['Espresso', 'Americano', 'Filtre Kahve', 'Türk Kahvesi', 'Ice Americano', 'Ice Filtre Kahve', 'Double Espresso', 'Double Türk Kahvesi'];
 const SECENEKSIZ = ['Türk Kahvesi', 'Double Türk Kahvesi'];
