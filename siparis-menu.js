@@ -5,75 +5,39 @@ const MENU = [
   "ad": "Waffle'lar",
   "urunler": [
    {
-    "ad": "Klasik Waffle",
-    "fiyat": 160,
-    "aciklama": "Sütlü çikolata sos, muz, çilek",
-    "etiket": ""
-   },
-   {
-    "ad": "Mama's Waffle",
-    "fiyat": 180,
-    "aciklama": "Ev yapımı karamel, fındık kreması, muz, çilek, fındık kırığı",
-    "etiket": "İmza"
-   },
-   {
     "ad": "Dubai Waffle",
     "fiyat": 230,
-    "aciklama": "Antep fıstığı kreması, çıtır kadayıf, bitter çikolata",
-    "etiket": "İmza"
+    "aciklama": "",
+    "etiket": ""
    },
    {
     "ad": "Oreo Waffle",
     "fiyat": 185,
-    "aciklama": "Beyaz çikolata sos, Oreo kreması, Oreo kırığı",
+    "aciklama": "",
     "etiket": ""
    },
    {
     "ad": "Lotus Waffle",
     "fiyat": 190,
-    "aciklama": "Lotus kreması, Lotus bisküvi kırığı, muz",
+    "aciklama": "",
     "etiket": ""
    },
    {
-    "ad": "Bueno Waffle",
-    "fiyat": 195,
-    "aciklama": "Fındık kreması, beyaz çikolata, Kinder Bueno parçaları",
+    "ad": "Colourful Waffle",
+    "fiyat": 0,
+    "aciklama": "",
     "etiket": ""
    },
    {
-    "ad": "Çikolata Şelalesi",
-    "fiyat": 175,
-    "aciklama": "Bitter, sütlü ve beyaz çikolata sos, fındık kırığı",
+    "ad": "Klasik Waffle",
+    "fiyat": 160,
+    "aciklama": "",
     "etiket": ""
    },
    {
-    "ad": "Beyaz Rüya",
-    "fiyat": 180,
-    "aciklama": "Beyaz çikolata, çilek, frambuaz",
-    "etiket": ""
-   },
-   {
-    "ad": "Cheesecake Waffle",
-    "fiyat": 195,
-    "aciklama": "Cheesecake kreması, frambuaz sos, bisküvi kırığı",
-    "etiket": "Yeni"
-   },
-   {
-    "ad": "Tiramisu Waffle",
-    "fiyat": 195,
-    "aciklama": "Mascarpone krema, espresso sos, kakao",
-    "etiket": "Yeni"
-   },
-   {
-    "ad": "Meyve Bahçesi",
-    "fiyat": 185,
-    "aciklama": "Mevsim meyveleri, krema, bal",
-    "etiket": ""
-   },
-   {
-    "ad": "Affogato Waffle",
-    "fiyat": 195,
-    "aciklama": "Vanilyalı dondurma, üstüne masada dökülen sıcak espresso",
+    "ad": "Kendin Yarat Waffle",
+    "fiyat": 0,
+    "aciklama": "",
     "etiket": ""
    }
   ],
