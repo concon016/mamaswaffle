@@ -87,55 +87,49 @@ const MENU = [
    {
     "ad": "Espresso",
     "fiyat": 85,
-    "aciklama": "Tek ya da duble shot",
+    "aciklama": "",
     "etiket": ""
    },
    {
     "ad": "Americano",
     "fiyat": 105,
-    "aciklama": "Espresso ve sıcak su",
+    "aciklama": "",
     "etiket": ""
    },
    {
-    "ad": "Filtre Kahve",
-    "fiyat": 95,
-    "aciklama": "Günün çekirdeğinden",
-    "etiket": ""
-   },
-   {
-    "ad": "Caffè Latte",
+    "ad": "Latte",
     "fiyat": 125,
-    "aciklama": "Espresso, buharla ısıtılmış süt, ince köpük",
+    "aciklama": "",
     "etiket": ""
    },
    {
     "ad": "Cappuccino",
     "fiyat": 125,
-    "aciklama": "Espresso, süt, bol süt köpüğü",
+    "aciklama": "",
     "etiket": ""
    },
    {
-    "ad": "Flat White",
-    "fiyat": 135,
-    "aciklama": "Duble ristretto, kadifemsi süt",
-    "etiket": ""
-   },
-   {
-    "ad": "Caffè Mocha",
+    "ad": "Mocha",
     "fiyat": 145,
-    "aciklama": "Espresso, çikolata sos, süt, krema",
+    "aciklama": "",
     "etiket": ""
    },
    {
     "ad": "White Chocolate Mocha",
     "fiyat": 150,
-    "aciklama": "Espresso, beyaz çikolata sos, süt, krema",
+    "aciklama": "",
     "etiket": ""
    },
    {
-    "ad": "Caramel Macchiato",
+    "ad": "Karamel Latte",
     "fiyat": 150,
-    "aciklama": "Vanilya şurubu, süt, espresso, karamel sos",
+    "aciklama": "",
+    "etiket": ""
+   },
+   {
+    "ad": "Filtre Kahve",
+    "fiyat": 95,
+    "aciklama": "",
     "etiket": ""
    },
    {
@@ -153,39 +147,27 @@ const MENU = [
   "ad": "Soğuk Kahveler",
   "urunler": [
    {
-    "ad": "Iced Americano",
+    "ad": "Ice Americano",
     "fiyat": 115,
-    "aciklama": "Espresso, soğuk su, buz",
+    "aciklama": "",
     "etiket": ""
    },
    {
-    "ad": "Iced Latte",
+    "ad": "Ice Latte",
     "fiyat": 135,
-    "aciklama": "Espresso, soğuk süt, buz",
+    "aciklama": "",
     "etiket": ""
    },
    {
-    "ad": "Iced Caramel Macchiato",
+    "ad": "Ice White Chocolate Mocha",
     "fiyat": 160,
-    "aciklama": "Vanilya, soğuk süt, espresso, karamel sos",
+    "aciklama": "",
     "etiket": ""
    },
    {
-    "ad": "Iced White Mocha",
+    "ad": "Ice Karamel Latte",
     "fiyat": 160,
-    "aciklama": "Beyaz çikolata sos, espresso, soğuk süt",
-    "etiket": ""
-   },
-   {
-    "ad": "Cold Brew",
-    "fiyat": 130,
-    "aciklama": "20 saat soğuk demlenmiş kahve",
-    "etiket": ""
-   },
-   {
-    "ad": "Vanilla Sweet Cream Cold Brew",
-    "fiyat": 150,
-    "aciklama": "Cold brew, vanilyalı tatlı krema",
+    "aciklama": "",
     "etiket": ""
    }
   ],
@@ -197,43 +179,19 @@ const MENU = [
   "ad": "Diğer İçecekler",
   "urunler": [
    {
-    "ad": "Sıcak Çikolata",
-    "fiyat": 125,
-    "aciklama": "Bol köpüklü, üstü kremalı",
-    "etiket": ""
-   },
-   {
-    "ad": "Chai Tea Latte",
-    "fiyat": 140,
-    "aciklama": "Baharatlı siyah çay, süt",
-    "etiket": ""
-   },
-   {
-    "ad": "Matcha Latte",
-    "fiyat": 150,
-    "aciklama": "Sıcak ya da buzlu",
-    "etiket": ""
-   },
-   {
-    "ad": "Çilekli Limonata",
-    "fiyat": 120,
-    "aciklama": "Taze limon, çilek püresi, nane",
-    "etiket": ""
-   },
-   {
-    "ad": "Naneli Limonata",
-    "fiyat": 110,
-    "aciklama": "Ev yapımı, taze nane",
-    "etiket": ""
-   },
-   {
     "ad": "Çay",
     "fiyat": 35,
     "aciklama": "İnce belli bardakta",
     "etiket": ""
    },
    {
-    "ad": "Su / Soda",
+    "ad": "Soda",
+    "fiyat": 30,
+    "aciklama": "",
+    "etiket": ""
+   },
+   {
+    "ad": "Su",
     "fiyat": 30,
     "aciklama": "",
     "etiket": ""
@@ -251,5 +209,5 @@ const SECENEKLER = {
   sut: { baslik: 'Süt', tip: 'tek', liste: [{ ad: 'Normal süt', fiyat: 0 }, { ad: 'Laktozsuz', fiyat: 20 }, { ad: 'Badem sütü', fiyat: 20 }, { ad: 'Yulaf sütü', fiyat: 20 }] }
 };
 const KATEGORI_SECENEK = { waffle: ['ekstra'], sicak: ['boy', 'sut'], soguk: ['boy', 'sut'] };
-const SUTSUZ = ['Espresso', 'Americano', 'Filtre Kahve', 'Türk Kahvesi', 'Iced Americano', 'Cold Brew'];
-const SECENEKSIZ = ['Türk Kahvesi'];
+const SUTSUZ = ['Espresso', 'Americano', 'Filtre Kahve', 'Türk Kahvesi', 'Ice Americano', 'Ice Filtre Kahve', 'Double Espresso', 'Double Türk Kahvesi'];
+const SECENEKSIZ = ['Türk Kahvesi', 'Double Türk Kahvesi'];
