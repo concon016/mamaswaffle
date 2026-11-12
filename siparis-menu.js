@@ -11,7 +11,7 @@ const MENU = [
     "etiket": ""
    },
    {
-    "ad": "Crispy Dream",
+    "ad": "Oreo Dream",
     "fiyat": 0,
     "aciklama": "",
     "etiket": ""
