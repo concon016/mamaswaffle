@@ -187,10 +187,9 @@ const kaydet = () => { try { sessionStorage.setItem('mw_sepet', JSON.stringify(s
 // Ürün listesi
 const chips = document.getElementById('chips'), liste = document.getElementById('liste');
 MENU.forEach((k, ki) => {
-  chips.insertAdjacentHTML('beforeend', `<a class="chip${ki ? '' : ' on'}" href="#k-${k.id}">${k.ikon} ${k.kisa}</a>`);
-  liste.insertAdjacentHTML('beforeend', `<section class="kat" id="k-${k.id}"><h2>${k.ikon} ${esc(k.ad)}</h2>` +
+  chips.insertAdjacentHTML('beforeend', `<a class="chip${ki ? '' : ' on'}" href="#k-${k.id}">${k.kisa}</a>`);
+  liste.insertAdjacentHTML('beforeend', `<section class="kat" id="k-${k.id}"><h2>${esc(k.ad)}</h2>` +
     k.urunler.map((u, ui) => `<button class="urun" data-k="${ki}" data-u="${ui}">
-      <div class="ik">${k.ikon}</div>
       <div class="bilgi"><h3>${esc(u.ad)}${u.etiket ? ` <span class="etiket ${u.etiket}">${u.etiket}</span>` : ''}</h3>
       ${u.aciklama ? `<p>${esc(u.aciklama)}</p>` : ''}${u.fiyat ? `<div class="fiyat">${TL(u.fiyat)}</div>` : ''}</div>
       <span class="ekle" aria-hidden="true">+</span></button>`).join('') + '</section>');
