@@ -31,7 +31,7 @@ const MENU = [
    {
     "ad": "Choco Caramel",
     "fiyat": 370,
-    "aciklama": "Muz, çilek, sütlü çikolata, karamel sos, Lotus parçacıkları, fıstık",
+    "aciklama": "Muz, çilek, sütlü çikolata, karamel sos, Lotus parçacıkları, fıstık parçacıkları",
     "etiket": ""
    },
    {
@@ -49,7 +49,7 @@ const MENU = [
    {
     "ad": "White Milky",
     "fiyat": 370,
-    "aciklama": "Muz, çilek, kivi, beyaz çikolata, beyaz pirinç patlağı, beyaz damla çikolata, fındık",
+    "aciklama": "Muz, çilek, kivi, beyaz çikolata, beyaz pirinç patlağı, beyaz damla çikolata, fındık parçacıkları",
     "etiket": ""
    }
   ],
