@@ -25,7 +25,7 @@ const MENU = [
    {
     "ad": "Oreo Dream",
     "fiyat": 0,
-    "aciklama": "Muz, bitter çikolata, beyaz çikolata, Oreo parçacıkları",
+    "aciklama": "Muz, bitter çikolata, beyaz çikolata, Oreo parçacıkları, bitter damla çikolata",
     "etiket": ""
    },
    {
