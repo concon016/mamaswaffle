@@ -131,6 +131,24 @@ const MENU = [
     "fiyat": 50,
     "aciklama": "",
     "etiket": ""
+   },
+   {
+    "ad": "Ihlamur",
+    "fiyat": 50,
+    "aciklama": "",
+    "etiket": ""
+   },
+   {
+    "ad": "Yeşil Çay",
+    "fiyat": 50,
+    "aciklama": "",
+    "etiket": ""
+   },
+   {
+    "ad": "Kış Çayı",
+    "fiyat": 50,
+    "aciklama": "",
+    "etiket": ""
    }
   ],
   "ikon": "☕",
