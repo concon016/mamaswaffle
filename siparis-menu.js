@@ -31,7 +31,7 @@ const MENU = [
    {
     "ad": "Choco Caramel",
     "fiyat": 0,
-    "aciklama": "Muz, çilek, sütlü çikolata, karamel, Lotus parçacıkları",
+    "aciklama": "Muz, çilek, sütlü çikolata, karamel, Lotus parçacıkları, fıstık",
     "etiket": ""
    },
    {
