@@ -208,31 +208,31 @@ const MENU = [
    },
    {
     "ad": "Soda",
-    "fiyat": 50,
-    "aciklama": "",
-    "etiket": ""
-   },
-   {
-    "ad": "Su",
     "fiyat": 40,
     "aciklama": "",
     "etiket": ""
    },
    {
+    "ad": "Su",
+    "fiyat": 30,
+    "aciklama": "",
+    "etiket": ""
+   },
+   {
     "ad": "Meşrubatlar",
-    "fiyat": 0,
+    "fiyat": 70,
     "aciklama": "",
     "etiket": ""
    },
    {
     "ad": "Meyve Suları",
-    "fiyat": 0,
+    "fiyat": 40,
     "aciklama": "",
     "etiket": ""
    },
    {
     "ad": "Meyveli Sodalar",
-    "fiyat": 0,
+    "fiyat": 50,
     "aciklama": "",
     "etiket": ""
    }
