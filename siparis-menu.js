@@ -13,43 +13,43 @@ const MENU = [
    {
     "ad": "Classic",
     "fiyat": 0,
-    "aciklama": "",
+    "aciklama": "Muz, çilek, kivi, sütlü çikolata, beyaz çikolata, çakıltaşı, fıstık",
     "etiket": ""
    },
    {
     "ad": "Dubai Night",
     "fiyat": 0,
-    "aciklama": "",
+    "aciklama": "Muz, çilek, sütlü çikolata, antep fıstıklı çikolata, çıtır kadayıf",
     "etiket": ""
    },
    {
     "ad": "Oreo Dream",
     "fiyat": 0,
-    "aciklama": "",
+    "aciklama": "Muz, bitter çikolata, beyaz çikolata, Oreo parçacıkları",
     "etiket": ""
    },
    {
     "ad": "Choco Caramel",
     "fiyat": 0,
-    "aciklama": "",
+    "aciklama": "Muz, çilek, sütlü çikolata, karamel, Lotus parçacıkları",
     "etiket": ""
    },
    {
     "ad": "Bonbonella",
     "fiyat": 0,
-    "aciklama": "",
+    "aciklama": "Muz, çilek, kivi, sütlü çikolata, beyaz çikolata, bonibon pasta süsü",
     "etiket": ""
    },
    {
     "ad": "Dark Velvet",
     "fiyat": 0,
-    "aciklama": "",
+    "aciklama": "Muz, çilek, bitter çikolata, çilek sos, bitter pirinç patlağı, bitter damla çikolata",
     "etiket": ""
    },
    {
     "ad": "White Milky",
     "fiyat": 0,
-    "aciklama": "",
+    "aciklama": "Muz, çilek, kivi, beyaz çikolata, beyaz pirinç patlağı, beyaz damla çikolata, fındık",
     "etiket": ""
    }
   ],
