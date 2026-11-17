@@ -6,7 +6,7 @@ const MENU = [
   "urunler": [
    {
     "ad": "Kendin Tasarla",
-    "fiyat": 0,
+    "fiyat": 350,
     "aciklama": "2 meyve, 2 çikolata, 1 sos ve 3 şekerleme dahil. Fazlası ekstra.",
     "etiket": "",
     "kendin": true
