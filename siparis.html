@@ -71,6 +71,7 @@ a{color:inherit;text-decoration:none}
 .grup{margin-top:16px}
 .grup h4{font-weight:800;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--rose-2);margin-bottom:8px}
 .sec{display:flex;align-items:center;gap:10px;padding:12px 14px;border:2px solid var(--line);border-radius:14px;margin-bottom:8px;font-weight:700}
+.grup h4 .say{margin-left:6px;text-transform:none;letter-spacing:0;font-weight:700;color:var(--muted)}
 .sec input{accent-color:var(--plum);width:20px;height:20px}
 .sec span{margin-left:auto;color:var(--muted);font-weight:700;font-size:.92rem}
 .sec:has(input:checked){border-color:var(--plum);background:var(--blush)}
@@ -220,6 +221,7 @@ perde.onclick = kapat; document.getElementById('kapat').onclick = kapat;
 liste.addEventListener('click', e => {
   const b = e.target.closest('.urun'); if (!b) return;
   const k = MENU[b.dataset.k], u = k.urunler[b.dataset.u], secs = seceneklerOf(k, u);
+  if (u.kendin) return kendinAc(u);
   let adet = 1;
   ac(`<h2>${esc(u.ad)}</h2><p class="acik-not">${esc(u.aciklama)}</p>` +
     secs.map(sk => { const s = SECENEKLER[sk]; return `<div class="grup"><h4>${s.baslik}</h4>` +
@@ -243,6 +245,42 @@ liste.addEventListener('click', e => {
     kaydet(); guncelle(); kapat();
   };
 });
+
+// Kendin Tasarla: gruplara göre seçim, dahil sayıyı aşan her seçim ekstra fiyatlanır
+function kendinAc(u) {
+  let adet = 1;
+  const G = KENDIN_TASARLA.gruplar;
+  ac(`<h2>${esc(u.ad)}</h2><p class="acik-not">${esc(u.aciklama)}</p>` +
+    G.map(g => `<div class="grup"><h4>${g.baslik} <span class="say" data-say="${g.id}"></span></h4>` +
+      g.liste.map((n, i) => `<label class="sec"><input type="checkbox" name="kt-${g.id}" value="${i}">${esc(n)}</label>`).join('') + '</div>').join('') +
+    `<div class="grup"><h4>Not (isteğe bağlı)</h4><textarea id="urunNot" maxlength="120"></textarea></div>
+    <div class="alt"><div class="adetkutu"><button data-d="-1" aria-label="Azalt">−</button><b id="adet">1</b><button data-d="1" aria-label="Artır">+</button></div>
+    <button class="ana-btn" id="ekleBtn"><span>Sepete Ekle</span><span id="ekleTutar"></span></button></div>`);
+  const hesap = () => {
+    let birim = u.fiyat, ekstraTop = 0, toplamSecim = 0; const sec = [];
+    G.forEach(g => {
+      const adlar = [...ic.querySelectorAll(`input[name=kt-${g.id}]:checked`)].map(i => g.liste[i.value]);
+      const ekstra = Math.max(0, adlar.length - g.dahil) * g.ekstra;
+      ekstraTop += ekstra; toplamSecim += adlar.length;
+      ic.querySelector(`[data-say=${g.id}]`).textContent = `${adlar.length}/${g.dahil} dahil` + (ekstra ? ` · +${TL(ekstra)} ekstra` : ` · fazlası +${TL(g.ekstra)}`);
+      if (adlar.length) sec.push(`${g.baslik}: ${adlar.join(', ')}`);
+    });
+    if (ekstraTop) sec.push(`Ekstra: +${TL(ekstraTop)}`);
+    birim += ekstraTop;
+    document.getElementById('ekleTutar').textContent = TL(birim * adet);
+    document.getElementById('ekleBtn').disabled = !toplamSecim;
+    return { birim, sec };
+  };
+  ic.onchange = hesap; hesap();
+  ic.querySelectorAll('[data-d]').forEach(x => x.onclick = () => { adet = Math.max(1, Math.min(20, adet + +x.dataset.d)); document.getElementById('adet').textContent = adet; hesap(); });
+  document.getElementById('ekleBtn').onclick = () => {
+    const { birim, sec } = hesap(), not = document.getElementById('urunNot').value.trim();
+    const anahtar = [u.ad, sec.join(','), not].join('|');
+    const var_ = sepet.find(s => s.anahtar === anahtar);
+    var_ ? var_.adet += adet : sepet.push({ anahtar, ad: u.ad, sec, not, birim, adet });
+    kaydet(); guncelle(); kapat();
+  };
+}
 
 function guncelle() {
   const adet = sepet.reduce((a, s) => a + s.adet, 0), tutar = sepet.reduce((a, s) => a + s.adet * s.birim, 0);

@@ -7,8 +7,9 @@ const MENU = [
    {
     "ad": "Kendin Tasarla",
     "fiyat": 0,
-    "aciklama": "",
-    "etiket": ""
+    "aciklama": "2 meyve, 2 çikolata, 1 sos ve 3 şekerleme dahil. Fazlası ekstra.",
+    "etiket": "",
+    "kendin": true
    },
    {
     "ad": "Classic",
@@ -251,3 +252,11 @@ const SECENEKLER = {
 const KATEGORI_SECENEK = { sicak: ['sut'], soguk: ['sut'] };
 const SUTSUZ = ['Espresso', 'Americano', 'Filtre Kahve', 'Türk Kahvesi', 'Ice Americano', 'Ice Filtre Kahve', 'Double Espresso', 'Double Türk Kahvesi', 'Çay', 'Cool Lime', 'Berry Hibiscus', 'Soda', 'Su'];
 const SECENEKSIZ = ['Türk Kahvesi', 'Double Türk Kahvesi', 'Çay', 'Cool Lime', 'Berry Hibiscus', 'Soda', 'Su'];
+
+// Kendin Tasarla: dahil olan seçim sayısı ve fazlası için ekstra fiyatlar (basılı broşürle aynı)
+const KENDIN_TASARLA = { gruplar: [
+  { id: 'meyve', baslik: 'Meyveler', dahil: 2, ekstra: 40, liste: ['Muz', 'Çilek', 'Kivi'] },
+  { id: 'cikolata', baslik: 'Çikolatalar', dahil: 2, ekstra: 40, liste: ['Beyaz', 'Sütlü', 'Bitter'] },
+  { id: 'sos', baslik: 'Soslar', dahil: 1, ekstra: 30, liste: ['Antep fıstığı', 'Çilek', 'Frambuaz', 'Karamel'] },
+  { id: 'sekerleme', baslik: 'Şekerlemeler', dahil: 3, ekstra: 30, liste: ['Mini bonibon', 'Çakıl taşı', 'Bitter damla çikolata', 'Sütlü damla çikolata', 'Beyaz damla çikolata', 'Frambuaz damla çikolata', 'Pasta süsü', 'Oreo parçacıkları', 'Lotus parçacıkları', 'Çilekli pirinç patlağı', 'Sütlü pirinç patlağı', 'Yaban mersinli pirinç patlağı', 'Beyaz pirinç patlağı', 'Çıtır kadayıf', 'Fındık parçacıkları', 'Fıstık parçacıkları', 'Hindistan cevizi'] }
+] };
