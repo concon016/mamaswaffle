@@ -217,6 +217,24 @@ const MENU = [
     "fiyat": 40,
     "aciklama": "",
     "etiket": ""
+   },
+   {
+    "ad": "Meşrubatlar",
+    "fiyat": 0,
+    "aciklama": "",
+    "etiket": ""
+   },
+   {
+    "ad": "Meyve Suları",
+    "fiyat": 0,
+    "aciklama": "",
+    "etiket": ""
+   },
+   {
+    "ad": "Meyveli Sodalar",
+    "fiyat": 0,
+    "aciklama": "",
+    "etiket": ""
    }
   ],
   "ikon": "🧊",
