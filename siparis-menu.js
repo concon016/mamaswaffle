@@ -13,7 +13,7 @@ const MENU = [
    {
     "ad": "Classic",
     "fiyat": 350,
-    "aciklama": "Muz, çilek, kivi, sütlü çikolata, beyaz çikolata, çakıltaşı, fıstık parçacıkları",
+    "aciklama": "Muz, çilek, kivi, sütlü çikolata, beyaz çikolata, çakıl taşı, fıstık parçacıkları",
     "etiket": ""
    },
    {
