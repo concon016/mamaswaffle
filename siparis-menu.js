@@ -37,7 +37,7 @@ const MENU = [
    {
     "ad": "Bonbonella",
     "fiyat": 0,
-    "aciklama": "Muz, çilek, kivi, sütlü çikolata, beyaz çikolata, bonibon pasta süsü",
+    "aciklama": "Muz, çilek, kivi, sütlü çikolata, beyaz çikolata, bonibon, pasta süsü",
     "etiket": ""
    },
    {
