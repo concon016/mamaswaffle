@@ -19,7 +19,7 @@ const MENU = [
    {
     "ad": "Dubai Night",
     "fiyat": 380,
-    "aciklama": "Muz, çilek, sütlü çikolata, antep fıstıklı çikolata, çıtır kadayıf",
+    "aciklama": "Muz, çilek, sütlü çikolata, antep fıstıklı sos, çıtır kadayıf",
     "etiket": ""
    },
    {
