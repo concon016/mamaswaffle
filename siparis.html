@@ -47,6 +47,7 @@ a{color:inherit;text-decoration:none}
 .urun h3{font-family:'Nunito',sans-serif;font-weight:800;font-size:1.02rem;line-height:1.25}
 .urun p{color:var(--muted);font-size:.86rem;line-height:1.35;margin-top:2px}
 .urun .fiyat{font-family:'Alfa Slab One',serif;color:var(--rose-2);margin-top:4px}
+.urun.bitti{opacity:.55;border-style:dashed;cursor:not-allowed}.urun.bitti h3{text-decoration:line-through}.urun.bitti .ekle{background:var(--muted);font-size:.62rem;font-weight:800;width:auto;min-width:40px;padding:0 9px;border-radius:99px}.sec.bitti{opacity:.5;text-decoration:line-through}.sec.bitti span{text-decoration:none;font-size:.8rem;margin-left:auto}
 .urun .ekle{width:40px;height:40px;border-radius:50%;background:var(--plum);color:var(--paper);font-size:1.5rem;line-height:1;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative}
 .urun .ekle i{position:absolute;top:-6px;right:-6px;background:var(--rose);color:#fff;font-style:normal;font-size:.72rem;font-weight:800;min-width:20px;height:20px;border-radius:10px;display:flex;align-items:center;justify-content:center;border:2px solid var(--paper)}
 .etiket{display:inline-block;font-size:.62rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:999px;background:var(--rose);color:#fff;vertical-align:2px;margin-left:4px}
@@ -196,6 +197,25 @@ MENU.forEach((k, ki) => {
       <span class="ekle" aria-hidden="true">+</span></button>`).join('') + '</section>');
 });
 
+// Mutfağın "tükendi" işaretlediği ürünler/malzemeler (sunucu da siparişte bunu denetler)
+let TUKENDI = new Set();
+function tukenCiz() {
+  document.querySelectorAll('.urun').forEach(b => {
+    const bitti = TUKENDI.has(MENU[b.dataset.k].urunler[b.dataset.u].ad);
+    b.classList.toggle('bitti', bitti);
+    if (bitti) b.querySelector('.ekle').textContent = 'Tükendi';
+  });
+}
+async function tukenYukle() {
+  try {
+    const j = await (await fetch('/api/tukendi', { cache: 'no-store' })).json();
+    TUKENDI = new Set(j.tukendi || []);
+    tukenCiz(); if (typeof guncelle === 'function') guncelle();
+  } catch (e) {}
+}
+tukenYukle();
+document.addEventListener('visibilitychange', () => { if (!document.hidden) tukenYukle(); });
+
 // Görünen kategoriyi çipte vurgula
 const chipEls = [...chips.children];
 const io = new IntersectionObserver(es => es.forEach(e => {
@@ -221,6 +241,7 @@ perde.onclick = kapat; document.getElementById('kapat').onclick = kapat;
 liste.addEventListener('click', e => {
   const b = e.target.closest('.urun'); if (!b) return;
   const k = MENU[b.dataset.k], u = k.urunler[b.dataset.u], secs = seceneklerOf(k, u);
+  if (TUKENDI.has(u.ad)) return;
   if (u.kendin) return kendinAc(u);
   let adet = 1;
   ac(`<h2>${esc(u.ad)}</h2><p class="acik-not">${esc(u.aciklama)}</p>` +
@@ -252,7 +273,7 @@ function kendinAc(u) {
   const G = KENDIN_TASARLA.gruplar;
   ac(`<h2>${esc(u.ad)}</h2><p class="acik-not">${esc(u.aciklama)}</p>` +
     G.map(g => `<div class="grup"><h4>${g.baslik} <span class="say" data-say="${g.id}"></span></h4>` +
-      g.liste.map((n, i) => `<label class="sec"><input type="checkbox" name="kt-${g.id}" value="${i}">${esc(n)}</label>`).join('') + '</div>').join('') +
+      g.liste.map((n, i) => { const yok = TUKENDI.has(g.baslik + ': ' + n); return `<label class="sec${yok ? ' bitti' : ''}"><input type="checkbox" name="kt-${g.id}" value="${i}"${yok ? ' disabled' : ''}>${esc(n)}${yok ? '<span>tükendi</span>' : ''}</label>`; }).join('') + '</div>').join('') +
     `<div class="grup"><h4>Not (isteğe bağlı)</h4><textarea id="urunNot" maxlength="120"></textarea></div>
     <div class="alt"><div class="adetkutu"><button data-d="-1" aria-label="Azalt">−</button><b id="adet">1</b><button data-d="1" aria-label="Artır">+</button></div>
     <button class="ana-btn" id="ekleBtn"><span>Sepete Ekle</span><span id="ekleTutar"></span></button></div>`);
@@ -289,6 +310,7 @@ function guncelle() {
   document.getElementById('bar').classList.toggle('gizli', !adet);
   document.querySelectorAll('.urun').forEach(b => {
     const u = MENU[b.dataset.k].urunler[b.dataset.u], n = sepet.filter(s => s.ad === u.ad).reduce((a, s) => a + s.adet, 0);
+    if (b.classList.contains('bitti')) return;
     b.querySelector('.ekle').innerHTML = '+' + (n ? `<i>${n}</i>` : '');
   });
   return tutar;
@@ -332,6 +354,7 @@ function sepetiAc() {
         <button class="ana-btn" onclick="document.getElementById('kapat').click()" style="justify-content:center">Menüye Dön</button></div>`);
     } catch (e) {
       g.disabled = false; metin.textContent = eskiMetin;
+      tukenYukle();
       const m = e instanceof TypeError ? 'Bağlantı kurulamadı. İnternetini kontrol edip tekrar dene.' : e.message;
       g.insertAdjacentHTML('afterend', `<p class="gonder-hata" id="gonderHata">${esc(m)}</p>`);
     }
