@@ -26,7 +26,7 @@ const MENU = [
    {
     "ad": "Oreo Dream",
     "fiyat": 370,
-    "aciklama": "Muz, bitter çikolata, beyaz çikolata, Oreo parçacıkları, bitter damla çikolata",
+    "aciklama": "Muz, ananas, bitter çikolata, beyaz çikolata, Oreo parçacıkları, bitter damla çikolata",
     "etiket": ""
    },
    {
@@ -255,7 +255,7 @@ const SECENEKSIZ = ['Türk Kahvesi', 'Double Türk Kahvesi', 'Çay', 'Cool Lime'
 
 // Kendin Tasarla: dahil olan seçim sayısı ve fazlası için ekstra fiyatlar (basılı broşürle aynı)
 const KENDIN_TASARLA = { gruplar: [
-  { id: 'meyve', baslik: 'Meyveler', dahil: 2, ekstra: 40, liste: ['Muz', 'Çilek', 'Kivi'] },
+  { id: 'meyve', baslik: 'Meyveler', dahil: 2, ekstra: 40, liste: ['Muz', 'Çilek', 'Kivi', 'Ananas'] },
   { id: 'cikolata', baslik: 'Çikolatalar', dahil: 2, ekstra: 40, liste: ['Beyaz', 'Sütlü', 'Bitter'] },
   { id: 'sos', baslik: 'Soslar', dahil: 1, ekstra: 30, liste: ['Antep fıstığı', 'Çilek', 'Frambuaz', 'Karamel'] },
   { id: 'sekerleme', baslik: 'Şekerlemeler', dahil: 3, ekstra: 30, liste: ['Mini bonibon', 'Çakıl taşı', 'Bitter damla çikolata', 'Sütlü damla çikolata', 'Beyaz damla çikolata', 'Frambuaz damla çikolata', 'Pasta süsü', 'Oreo parçacıkları', 'Lotus parçacıkları', 'Çilekli pirinç patlağı', 'Sütlü pirinç patlağı', 'Yaban mersinli pirinç patlağı', 'Beyaz pirinç patlağı', 'Çıtır kadayıf', 'Fındık parçacıkları', 'Fıstık parçacıkları', 'Hindistan cevizi'] }
