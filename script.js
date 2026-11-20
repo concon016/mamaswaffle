@@ -10,14 +10,25 @@ navLinks?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   burger?.classList.remove('open');
 }));
 
-// Formlar şimdilik yerel: gönderim simüle edilir
+// İletişim formu: /api/iletisim ile gerçek e-postaya gider
 document.querySelectorAll('.js-form').forEach(form => {
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', async e => {
     e.preventDefault();
     const msg = form.querySelector('.form-msg');
-    msg.textContent = form.dataset.msg;
+    const btn = form.querySelector('button[type="submit"]');
+    const veri = Object.fromEntries(new FormData(form));
+    btn.disabled = true;
+    try {
+      const r = await fetch('/api/iletisim', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(veri) });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(j.hata || 'Mesaj gönderilemedi, lütfen tekrar dene.');
+      msg.textContent = form.dataset.msg;
+      form.reset();
+    } catch (err) {
+      msg.textContent = err.message;
+    }
     msg.classList.add('show');
-    form.reset();
+    btn.disabled = false;
   });
 });
 
